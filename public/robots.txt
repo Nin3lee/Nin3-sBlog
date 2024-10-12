@@ -1,0 +1,6 @@
+# 禁止GPTBot爬虫抓取
+User-agent: GPTBot
+Disallow: /
+
+# 全部语法：
+https://developers.google.com/search/docs/crawling-indexing/robots/create-robots-txt?hl=zh-cn
