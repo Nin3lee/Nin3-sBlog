@@ -1,16 +1,77 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro";
 
+const pageTitle = "Nin3's Blog";
 ---
 
-<html lang="zh-CN">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Nin3's Blog</title>
-	</head>
-	<body>
-		<h1 class="m-4">彼处记忆若酒。</h1>
-	</body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+	<main
+		class="w-96 md:w-[45rem] lg:w-[60rem] mx-auto flex flex-col gap-9 my-9"
+	>
+		<!-- Social cards & self introductionn -->
+		<section class="grid grid-cols-2 gap-8">
+			<div class="bg-blue-100 size-44 md:size-auto md:h-44">
+				self-introduction-1st
+			</div>
+			<div class="bg-blue-100 size-44 md:size-auto md:h-44">
+				self-introduction-2nd
+			</div>
+		</section>
+		<!-- Recent Posts -->
+		<section>
+			<p class="text-2xl">Recent Post</p>
+			<div class="grid grid-cols-6 gap-6">
+				<article class="bg-purple-100 col-span-6 h-72">1st</article>
+				<article class="bg-purple-100 col-span-6 h-72 md:col-span-3">
+					2nd
+				</article>
+				<article class="bg-purple-100 col-span-6 h-72 md:col-span-3">
+					3rd
+				</article>
+				<article
+					class="bg-purple-100 col-span-6 h-72 md:col-span-3 lg:col-span-2"
+				>
+					4th
+				</article>
+				<article
+					class="bg-purple-100 col-span-6 h-72 md:col-span-3 lg:col-span-2"
+				>
+					5th
+				</article>
+				<article
+					class="bg-purple-100 col-span-6 h-72 md:col-span-3 lg:col-span-2"
+				>
+					6th
+				</article>
+				<article
+					class="bg-purple-100 col-span-6 h-72 md:col-span-3 lg:col-span-2"
+				>
+					7th
+				</article>
+				<article
+					class="bg-purple-100 col-span-6 h-72 md:col-span-3 lg:col-span-2"
+				>
+					8th
+				</article>
+				<article
+					class="bg-purple-100 col-span-6 h-72 md:col-span-3 lg:col-span-2"
+				>
+					9th
+				</article>
+			</div>
+		</section>
+		<!-- History Posts -->
+		<section>
+			<p class="text-2xl">History Archieve</p>
+			<div class="grid grid-cols-6 gap-6">
+				<article class="bg-red-100 col-span-6 h-40 md:col-span-3">
+					1st
+				</article>
+				<article class="bg-red-100 col-span-6 h-40 md:col-span-3">
+					2nd
+				</article>
+			</div>
+		</section>
+		<a href="/archieve/" class="mx-auto">View archieve</a>
+	</main>
+</BaseLayout>
