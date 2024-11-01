@@ -1,10 +1,10 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const pageTitle = "Nin3's Blog";
+const pageTitle = "Blog";
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout pageTitle=`Nin3's ${pageTitle}`>
 	<main
 		class="w-96 md:w-[45rem] lg:w-[60rem] mx-auto flex flex-col gap-9 my-9"
 	>
@@ -72,6 +72,6 @@ const pageTitle = "Nin3's Blog";
 				</article>
 			</div>
 		</section>
-		<a href="/archieve/" class="mx-auto">View archieve</a>
+		<a href="/post/" class="mx-auto">View Post</a>
 	</main>
 </BaseLayout>

@@ -3,6 +3,7 @@ import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 
 const { pageTitle } = Astro.props;
+const { frontmatter } = Astro.props;
 ---
 
 <!doctype html>
@@ -24,7 +25,19 @@ const { pageTitle } = Astro.props;
     </head>
     <body>
         <Nav />
+        <h1>{frontmatter.title}</h1>
+        <h3><em>{frontmatter.tags}</em></h3>
         <slot />
+        <hr />
+        <div>
+            {
+                frontmatter.tags.map((tag) => (
+                    <p>
+                        <a href={`/tag/${tag}`}>{tag}</a>
+                    </p>
+                ))
+            }
+        </div>
         <Footer />
     </body>
 </html>

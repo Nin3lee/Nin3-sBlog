@@ -1,0 +1,24 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const pageTitle = "Tag";
+const allPosts = await Astro.glob("./posts/*.md");
+const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
+---
+
+<div class="min-h-screen flex flex-col">
+    <BaseLayout pageTitle=`Nin3's ${pageTitle}`>
+        <div class="w-96 md:w-[45rem] lg:w-[60rem] mx-auto flex flex-col my-9">
+            <p class="text-2xl">{pageTitle}</p>
+            <main class="grid grid-cols-2 md:grid-cols-3 gap-6">
+                {
+                    tags.map((tag) => (
+                        <section class="aspect-square bg-slate-100">
+                            <a href={`/tag/${tag}`}>{tag}</a>
+                        </section>
+                    ))
+                }
+            </main>
+        </div>
+    </BaseLayout>
+</div>
