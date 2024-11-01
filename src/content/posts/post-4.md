@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/BlogLayout.astro
 title: post-4 title
 tags: ["test-4"]
 ---

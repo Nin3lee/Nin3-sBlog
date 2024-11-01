@@ -25,18 +25,20 @@ const { frontmatter } = Astro.props;
     </head>
     <body>
         <Nav />
-        <h1>{frontmatter.title}</h1>
-        <h3><em>{frontmatter.tags}</em></h3>
-        <slot />
-        <hr />
-        <div>
-            {
-                frontmatter.tags.map((tag) => (
-                    <p>
-                        <a href={`/tag/${tag}`}>{tag}</a>
-                    </p>
-                ))
-            }
+        <div class="w-96 md:w-[45rem] lg:w-[60rem] mx-auto flex flex-col my-9">
+            <h1>{frontmatter.title}</h1>
+            <h3><em>{frontmatter.tags}</em></h3>
+            <slot />
+            <hr />
+            <div>
+                {
+                    frontmatter.tags.map((tag) => (
+                        <p>
+                            <a href={`/tags/${tag}`}>{tag}</a>
+                        </p>
+                    ))
+                }
+            </div>
         </div>
         <Footer />
     </body>
