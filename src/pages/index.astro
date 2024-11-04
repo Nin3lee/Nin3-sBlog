@@ -1,5 +1,17 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+let PostByTime = await getCollection("posts");
+PostByTime = PostByTime.sort(
+	(a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime(),
+);
+
+const RecommendPost = PostByTime[0];
+const SecondPost = PostByTime[1];
+const ThirdPost = PostByTime[2];
+const OtherPost = PostByTime.slice(3, 9);
+const HistoryPost = PostByTime.slice(9);
 
 const pageTitle = "Blog";
 ---
@@ -21,57 +33,47 @@ const pageTitle = "Blog";
 		<section>
 			<p class="text-2xl">Recent Post</p>
 			<div class="grid grid-cols-6 gap-6">
-				<article class="bg-purple-100 col-span-6 h-72">1st</article>
-				<article class="bg-purple-100 col-span-6 h-72 md:col-span-3">
-					2nd
+				<article class="bg-purple-100 col-span-6 h-72">
+					<a href={`/posts/${RecommendPost.slug}`}
+						>{RecommendPost.data.title}[1st]</a
+					>
 				</article>
 				<article class="bg-purple-100 col-span-6 h-72 md:col-span-3">
-					3rd
+					<a href={`/posts/${SecondPost.slug}`}
+						>{SecondPost.data.title}[2nd]</a
+					>
 				</article>
-				<article
-					class="bg-purple-100 col-span-6 h-72 md:col-span-3 lg:col-span-2"
-				>
-					4th
+				<article class="bg-purple-100 col-span-6 h-72 md:col-span-3">
+					<a href={`/posts/${ThirdPost.slug}`}
+						>{ThirdPost.data.title}[3rd]</a
+					>
 				</article>
-				<article
-					class="bg-purple-100 col-span-6 h-72 md:col-span-3 lg:col-span-2"
-				>
-					5th
-				</article>
-				<article
-					class="bg-purple-100 col-span-6 h-72 md:col-span-3 lg:col-span-2"
-				>
-					6th
-				</article>
-				<article
-					class="bg-purple-100 col-span-6 h-72 md:col-span-3 lg:col-span-2"
-				>
-					7th
-				</article>
-				<article
-					class="bg-purple-100 col-span-6 h-72 md:col-span-3 lg:col-span-2"
-				>
-					8th
-				</article>
-				<article
-					class="bg-purple-100 col-span-6 h-72 md:col-span-3 lg:col-span-2"
-				>
-					9th
-				</article>
+				{
+					OtherPost.map((post) => (
+						<article class="bg-purple-100 col-span-6 h-72 md:col-span-3 lg:col-span-2">
+							<a href={`/posts/${post.slug}`}>
+								{post.data.title}
+							</a>
+						</article>
+					))
+				}
 			</div>
 		</section>
 		<!-- History Posts -->
 		<section>
 			<p class="text-2xl">History Archieve</p>
 			<div class="grid grid-cols-6 gap-6">
-				<article class="bg-red-100 col-span-6 h-40 md:col-span-3">
-					1st
-				</article>
-				<article class="bg-red-100 col-span-6 h-40 md:col-span-3">
-					2nd
-				</article>
+				{
+					HistoryPost.map((post) => (
+						<article class="bg-red-100 col-span-6 h-40 md:col-span-3">
+							<a href={`/posts/${post.slug}`}>
+								{post.data.title}
+							</a>
+						</article>
+					))
+				}
 			</div>
 		</section>
-		<a href="/post/" class="mx-auto">View Post</a>
+		<a href="/posts/" class="mx-auto">View Posts</a>
 	</main>
 </BaseLayout>

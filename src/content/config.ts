@@ -4,7 +4,8 @@ const postsCollection = defineCollection({
     type: 'content',
     schema: z.object({
         title: z.string(),
-        tags: z.array(z.string())
+        tags: z.array(z.string()),
+        pubDate: z.date()
     })
 });
 // 导出一个单独的 `collections` 对象来注册你的集合

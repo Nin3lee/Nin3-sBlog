@@ -3,13 +3,16 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
-    const allPosts = await getCollection("posts");
+    let PostByTime = await getCollection("posts");
+    PostByTime = PostByTime.sort(
+        (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime(),
+    );
 
     const uniqueTags = [
-        ...new Set(allPosts.map((post) => post.data.tags).flat()),
+        ...new Set(PostByTime.map((post) => post.data.tags).flat()),
     ];
     return uniqueTags.map((tag) => {
-        const filteredPosts = allPosts.filter((post) =>
+        const filteredPosts = PostByTime.filter((post) =>
             post.data.tags.includes(tag),
         );
         return {

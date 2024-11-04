@@ -27,6 +27,7 @@ const { frontmatter } = Astro.props;
         <Nav />
         <div class="w-96 md:w-[45rem] lg:w-[60rem] mx-auto flex flex-col my-9">
             <h1>{frontmatter.title}</h1>
+            <h3>{frontmatter.pubDate}</h3>
             <h3><em>{frontmatter.tags}</em></h3>
             <slot />
             <hr />
@@ -34,7 +35,9 @@ const { frontmatter } = Astro.props;
                 {
                     frontmatter.tags.map((tag) => (
                         <p>
-                            <a href={`/tags/${tag}`}>{tag}</a>
+                            <a href={`/tags/${tag}`} class="text-blue-400">
+                                {tag}
+                            </a>
                         </p>
                     ))
                 }
