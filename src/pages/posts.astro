@@ -10,20 +10,22 @@ PostByTime = PostByTime.sort(
 );
 ---
 
-<BaseLayout pageTitle=`Nin3's ${pageTitle}`>
-    <div class="w-96 md:w-[45rem] lg:w-[60rem] mx-auto flex flex-col my-9">
-        <p class="text-2xl">{pageTitle}</p>
-        <ul>
-            {
-                PostByTime.map((post) => (
-                    <li class="flex">
-                        <a href={post.slug}>{post.data.title}</a>
-                        <div class="text-gray-300 ml-auto">
-                            {post.data.pubDate}
-                        </div>
-                    </li>
-                ))
-            }
-        </ul>
-    </div>
-</BaseLayout>
+<div class="min-h-screen flex flex-col">
+    <BaseLayout pageTitle=`Nin3's ${pageTitle}`>
+        <div class="w-96 md:w-[45rem] lg:w-[60rem] mx-auto flex flex-col my-9">
+            <p class="text-2xl mb-3">{pageTitle}</p>
+            <ul>
+                {
+                    PostByTime.map((post) => (
+                        <li class="flex">
+                            <a href={post.slug}>{post.data.title}</a>
+                            <div class="text-gray-300 ml-auto">
+                                {post.data.pubDate}
+                            </div>
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
+    </BaseLayout>
+</div>

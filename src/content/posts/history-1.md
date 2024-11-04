@@ -1,6 +1,6 @@
 ---
 title: History-1 title
-tags: ["test-1"]
+tags: ["history-1"]
 pubDate: 2024-09-04
 ---
 

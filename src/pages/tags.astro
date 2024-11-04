@@ -10,13 +10,16 @@ const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
 <div class="min-h-screen flex flex-col">
     <BaseLayout pageTitle=`Nin3's ${pageTitle}`>
         <div class="w-96 md:w-[45rem] lg:w-[60rem] mx-auto flex flex-col my-9">
-            <p class="text-2xl">{pageTitle}</p>
-            <main class="grid grid-cols-2 md:grid-cols-3 gap-6">
+            <p class="text-2xl mb-3">{pageTitle}</p>
+            <main class="grid grid-cols-2 md:grid-cols-4 gap-3">
                 {
                     tags.map((tag) => (
-                        <section class="aspect-square bg-slate-100">
-                            <a href={`/tags/${tag}`}>{tag}</a>
-                        </section>
+                        <a
+                            href={`/tags/${tag}`}
+                            class="bg-slate-100 rounded-full hover:scale-95 duration-200"
+                        >
+                            <div class="my-3 mx-4">#{tag}</div>
+                        </a>
                     ))
                 }
             </main>

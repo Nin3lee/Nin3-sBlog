@@ -31,49 +31,60 @@ const pageTitle = "Blog";
 		</section>
 		<!-- Recent Posts -->
 		<section>
-			<p class="text-2xl">Recent Post</p>
+			<p class="text-2xl mb-3">Recent Post</p>
 			<div class="grid grid-cols-6 gap-6">
-				<article class="bg-purple-100 col-span-6 h-72">
-					<a href={`/posts/${RecommendPost.slug}`}
-						>{RecommendPost.data.title}[1st]</a
+				<a
+					href={`/posts/${RecommendPost.slug}`}
+					class="bg-purple-100 col-span-6 h-72 flex hover:scale-[0.97] duration-200"
+				>
+					<article>
+						{RecommendPost.data.title}[1st]
+					</article>
+					<a
+						href={`/posts/${SecondPost.slug}`}
+						class="bg-purple-100 col-span-6 h-72 flex md:col-span-3 hover:scale-[0.97] duration-200"
 					>
-				</article>
-				<article class="bg-purple-100 col-span-6 h-72 md:col-span-3">
-					<a href={`/posts/${SecondPost.slug}`}
-						>{SecondPost.data.title}[2nd]</a
-					>
-				</article>
-				<article class="bg-purple-100 col-span-6 h-72 md:col-span-3">
-					<a href={`/posts/${ThirdPost.slug}`}
-						>{ThirdPost.data.title}[3rd]</a
-					>
-				</article>
-				{
-					OtherPost.map((post) => (
-						<article class="bg-purple-100 col-span-6 h-72 md:col-span-3 lg:col-span-2">
-							<a href={`/posts/${post.slug}`}>
-								{post.data.title}
-							</a>
+						<article>
+							{SecondPost.data.title}[2nd]
 						</article>
-					))
-				}
-			</div>
-		</section>
-		<!-- History Posts -->
-		<section>
-			<p class="text-2xl">History Archieve</p>
-			<div class="grid grid-cols-6 gap-6">
-				{
-					HistoryPost.map((post) => (
-						<article class="bg-red-100 col-span-6 h-40 md:col-span-3">
-							<a href={`/posts/${post.slug}`}>
-								{post.data.title}
-							</a>
+					</a>
+					<a
+						href={`/posts/${ThirdPost.slug}`}
+						class="bg-purple-100 col-span-6 h-72 flex md:col-span-3 hover:scale-[0.97] duration-200"
+					>
+						<article>
+							{ThirdPost.data.title}[3rd]
 						</article>
-					))
-				}
+					</a>
+					{
+						OtherPost.map((post) => (
+							<a
+								href={`/posts/${post.slug}`}
+								class="bg-purple-100 col-span-6 h-72 flex md:col-span-3 lg:col-span-2 hover:scale-[0.97] duration-200"
+							>
+								<article>{post.data.title}</article>
+							</a>
+						))
+					}
+				</a>
 			</div>
+			<!-- History Posts -->
+			<section>
+				<p class="text-2xl mb-3">History Archieve</p>
+				<div class="grid grid-cols-6 gap-6">
+					{
+						HistoryPost.map((post) => (
+							<a
+								href={`/posts/${post.slug}`}
+								class="bg-red-100 col-span-6 h-40 flex md:col-span-3 hover:scale-[0.97] duration-200"
+							>
+								<article>{post.data.title}</article>
+							</a>
+						))
+					}
+				</div>
+			</section>
+			<a href="/posts/" class="mx-auto">View Posts</a>
 		</section>
-		<a href="/posts/" class="mx-auto">View Posts</a>
 	</main>
 </BaseLayout>
