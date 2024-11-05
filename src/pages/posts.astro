@@ -18,10 +18,16 @@ PostByTime = PostByTime.sort(
                 {
                     PostByTime.map((post) => (
                         <li class="flex">
-                            <a href={post.slug}>{post.data.title}</a>
-                            <div class="text-gray-300 ml-auto">
-                                {post.data.pubDate}
-                            </div>
+                            <a
+                                href={post.slug}
+                                class="mb-4 hover:scale-95 duration-200"
+                            >
+                                {post.data.title}
+                                <div class="text-gray-300">
+                                    {post.data.pubDate.toString().slice(4, 15)}
+                                    {post.data.tags}#
+                                </div>
+                            </a>
                         </li>
                     ))
                 }

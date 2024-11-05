@@ -1,6 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+import aigc from "../assets/images/aigc.png";
 
 let PostByTime = await getCollection("posts");
 PostByTime = PostByTime.sort(
@@ -35,56 +37,65 @@ const pageTitle = "Blog";
 			<div class="grid grid-cols-6 gap-6">
 				<a
 					href={`/posts/${RecommendPost.slug}`}
-					class="bg-purple-100 col-span-6 h-72 flex hover:scale-[0.97] duration-200"
+					class="bg-purple-100 col-span-6 h-72 flex flex-col md:flex-row hover:scale-[0.97] duration-200 rounded-lg overflow-hidden"
+				>
+					<div class="aspect-video w-96 md:w-fit">
+						<Image src={aigc} alt="Recommend Post's cover" />
+					</div>
+					<article class="m-4">
+						<h2 class="text-blue-500 font-bold">
+							{RecommendPost.data.tags}
+						</h2>
+						<h1 class="text-lg font-bold">
+							{RecommendPost.data.title}
+						</h1>
+						<h3>{RecommendPost.data.pubDate}</h3>
+					</article>
+				</a>
+				<a
+					href={`/posts/${SecondPost.slug}`}
+					class="bg-purple-100 col-span-6 h-72 flex md:col-span-3 hover:scale-[0.97] duration-200"
 				>
 					<article>
-						{RecommendPost.data.title}[1st]
+						{SecondPost.data.title}[2nd]
 					</article>
-					<a
-						href={`/posts/${SecondPost.slug}`}
-						class="bg-purple-100 col-span-6 h-72 flex md:col-span-3 hover:scale-[0.97] duration-200"
-					>
-						<article>
-							{SecondPost.data.title}[2nd]
-						</article>
-					</a>
-					<a
-						href={`/posts/${ThirdPost.slug}`}
-						class="bg-purple-100 col-span-6 h-72 flex md:col-span-3 hover:scale-[0.97] duration-200"
-					>
-						<article>
-							{ThirdPost.data.title}[3rd]
-						</article>
-					</a>
-					{
-						OtherPost.map((post) => (
-							<a
-								href={`/posts/${post.slug}`}
-								class="bg-purple-100 col-span-6 h-72 flex md:col-span-3 lg:col-span-2 hover:scale-[0.97] duration-200"
-							>
-								<article>{post.data.title}</article>
-							</a>
-						))
-					}
 				</a>
+				<a
+					href={`/posts/${ThirdPost.slug}`}
+					class="bg-purple-100 col-span-6 h-72 flex md:col-span-3 hover:scale-[0.97] duration-200"
+				>
+					<article>
+						{ThirdPost.data.title}[3rd]
+					</article>
+				</a>
+				{
+					OtherPost.map((post) => (
+						<a
+							href={`/posts/${post.slug}`}
+							class="bg-purple-100 col-span-6 h-72 flex md:col-span-3 lg:col-span-2 hover:scale-[0.97] duration-200"
+						>
+							<article>{post.data.title}</article>
+						</a>
+					))
+				}
 			</div>
 			<!-- History Posts -->
-			<section>
-				<p class="text-2xl mb-3">History Archieve</p>
-				<div class="grid grid-cols-6 gap-6">
-					{
-						HistoryPost.map((post) => (
-							<a
-								href={`/posts/${post.slug}`}
-								class="bg-red-100 col-span-6 h-40 flex md:col-span-3 hover:scale-[0.97] duration-200"
-							>
-								<article>{post.data.title}</article>
-							</a>
-						))
-					}
-				</div>
-			</section>
-			<a href="/posts/" class="mx-auto">View Posts</a>
 		</section>
+		<section>
+			<p class="text-2xl mb-3">History Archieve</p>
+			<div class="grid grid-cols-6 gap-6">
+				{
+					HistoryPost.map((post) => (
+						<a
+							href={`/posts/${post.slug}`}
+							class="bg-red-100 col-span-6 h-40 flex md:col-span-3 hover:scale-[0.97] duration-200"
+						>
+							<article>{post.data.title}</article>
+						</a>
+					))
+				}
+			</div>
+		</section>
+		<a href="/posts/" class="mx-auto">View Posts</a>
 	</main>
 </BaseLayout>
