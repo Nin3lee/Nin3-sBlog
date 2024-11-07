@@ -1,7 +1,8 @@
 ---
-title: post-11 title
-tags: ["test-1"]
-pubDate: 2024-11-07
+title: This is A test
+tags: ["测试"]
+pubDate: 2000-02-04
+cover: ./images/test.png
 ---
 
 Seventh post for test

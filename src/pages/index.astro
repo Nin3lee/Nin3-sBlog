@@ -2,7 +2,6 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
-import aigc from "../assets/images/aigc.png";
 
 let PostByTime = await getCollection("posts");
 PostByTime = PostByTime.sort(
@@ -12,16 +11,13 @@ PostByTime = PostByTime.sort(
 const RecommendPost = PostByTime[0];
 const SecondPost = PostByTime[1];
 const ThirdPost = PostByTime[2];
-const OtherPost = PostByTime.slice(3, 9);
-const HistoryPost = PostByTime.slice(9);
+const HistoryPost = PostByTime.slice(3, 5);
 
 const pageTitle = "Blog";
 ---
 
 <BaseLayout pageTitle=`Nin3's ${pageTitle}`>
-	<main
-		class="w-96 md:w-[45rem] lg:w-[60rem] mx-auto flex flex-col gap-9 my-9"
-	>
+	<main class="w-96 md:w-[45rem] mx-auto flex flex-col gap-9 my-9">
 		<!-- Social cards & self introductionn -->
 		<section class="grid grid-cols-2 gap-8">
 			<div class="bg-blue-100 size-44 md:size-auto md:h-44">
@@ -37,47 +33,82 @@ const pageTitle = "Blog";
 			<div class="grid grid-cols-6 gap-6">
 				<a
 					href={`/posts/${RecommendPost.slug}`}
-					class="bg-purple-100 col-span-6 h-72 flex flex-col md:flex-row hover:scale-[0.97] duration-200 rounded-lg overflow-hidden"
+					class="col-span-6 h-72 flex flex-col md:flex-row hover:scale-[0.97] duration-200 rounded-lg overflow-hidden shadow"
 				>
 					<div class="aspect-video w-96 md:w-fit">
-						<Image src={aigc} alt="Recommend Post's cover" />
+						<Image
+							src={RecommendPost.data.cover}
+							alt="Recommend Post's cover"
+						/>
 					</div>
 					<article class="m-4">
-						<h2 class="text-blue-500 font-bold">
-							{RecommendPost.data.tags}
+						<h2
+							class="font-bold text-sm md:text-base text-gray-500"
+						>
+							· {RecommendPost.data.tags}
 						</h2>
-						<h1 class="text-lg font-bold">
-							{RecommendPost.data.title}
-						</h1>
-						<h3>{RecommendPost.data.pubDate}</h3>
+						<div class="flex justify-between md:flex-col">
+							<h1 class="md:text-lg font-bold">
+								{RecommendPost.data.title}
+							</h1>
+							<h3>
+								{
+									RecommendPost.data.pubDate
+										.toString()
+										.slice(4, 10)
+								}
+							</h3>
+						</div>
 					</article>
 				</a>
 				<a
 					href={`/posts/${SecondPost.slug}`}
-					class="bg-purple-100 col-span-6 h-72 flex md:col-span-3 hover:scale-[0.97] duration-200"
+					class="col-span-6 h-72 flex flex-col md:col-span-3 hover:scale-[0.97] duration-200 rounded-lg overflow-hidden shadow"
 				>
-					<article>
-						{SecondPost.data.title}[2nd]
+					<div class="aspect-video w-96 md:w-[348px]">
+						<Image
+							src={SecondPost.data.cover}
+							alt="Second Post's cover"
+						/>
+					</div>
+					<article class="m-4">
+						<h2 class="font-bold text-sm text-gray-500">
+							· {SecondPost.data.tags}
+						</h2>
+						<div class="flex justify-between md:flex-col">
+							<h1 class="font-bold">{SecondPost.data.title}</h1>
+							<h3>
+								{
+									SecondPost.data.pubDate
+										.toString()
+										.slice(4, 10)
+								}
+							</h3>
+						</div>
 					</article>
 				</a>
 				<a
 					href={`/posts/${ThirdPost.slug}`}
-					class="bg-purple-100 col-span-6 h-72 flex md:col-span-3 hover:scale-[0.97] duration-200"
+					class="col-span-6 h-72 flex flex-col md:col-span-3 hover:scale-[0.97] duration-200 rounded-lg overflow-hidden shadow"
 				>
-					<article>
-						{ThirdPost.data.title}[3rd]
+					<div class="aspect-video w-96 md:w-[348px]">
+						<Image
+							src={ThirdPost.data.cover}
+							alt="Third Post's cover"
+						/>
+					</div>
+					<article class="m-4">
+						<h2 class="font-bold text-sm text-gray-500">
+							· {ThirdPost.data.tags}
+						</h2>
+						<div class="flex justify-between md:flex-col">
+							<h1 class="font-bold">{ThirdPost.data.title}</h1>
+							<h3>
+								{ThirdPost.data.pubDate.toString().slice(4, 10)}
+							</h3>
+						</div>
 					</article>
 				</a>
-				{
-					OtherPost.map((post) => (
-						<a
-							href={`/posts/${post.slug}`}
-							class="bg-purple-100 col-span-6 h-72 flex md:col-span-3 lg:col-span-2 hover:scale-[0.97] duration-200"
-						>
-							<article>{post.data.title}</article>
-						</a>
-					))
-				}
 			</div>
 			<!-- History Posts -->
 		</section>
@@ -88,9 +119,25 @@ const pageTitle = "Blog";
 					HistoryPost.map((post) => (
 						<a
 							href={`/posts/${post.slug}`}
-							class="bg-red-100 col-span-6 h-40 flex md:col-span-3 hover:scale-[0.97] duration-200"
+							class="col-span-6 h-80 flex flex-col md:col-span-3 hover:scale-[0.97] duration-200 rounded-lg overflow-hidden shadow"
 						>
-							<article>{post.data.title}</article>
+							<div class="aspect-video w-96 md:w-[348px]">
+								<Image
+									src={post.data.cover}
+									alt="HistoryPosts' cover"
+								/>
+							</div>
+							<article class="m-4 flex flex-col justify-between">
+								<div>
+									<h2 class="font-bold text-sm text-gray-500">
+										· {post.data.tags}
+									</h2>
+									<h1 class="font-bold">{post.data.title}</h1>
+								</div>
+								<h3>
+									{post.data.pubDate.toString().slice(4, 10)}
+								</h3>
+							</article>
 						</a>
 					))
 				}

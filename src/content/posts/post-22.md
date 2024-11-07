@@ -1,7 +1,8 @@
 ---
 title: post-22 title
-tags: ["test-2"]
-pubDate: 2024-11-03
+tags: ["测试"]
+pubDate: 2000-09-24
+cover: ./images/test-dark.png
 ---
 
 Eighth post for test
