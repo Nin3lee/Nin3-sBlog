@@ -33,7 +33,7 @@ const pageTitle = "Blog";
 			<div class="grid grid-cols-6 gap-6">
 				<a
 					href={`/posts/${RecommendPost.slug}`}
-					class="col-span-6 h-72 flex flex-col md:flex-row hover:scale-[0.97] duration-200 rounded-lg overflow-hidden shadow"
+					class="col-span-6 h-80 md:h-64 flex flex-col md:flex-row hover:scale-[0.97] duration-200 rounded-lg overflow-hidden shadow"
 				>
 					<div class="aspect-video w-96 md:w-fit">
 						<Image
@@ -41,72 +41,66 @@ const pageTitle = "Blog";
 							alt="Recommend Post's cover"
 						/>
 					</div>
-					<article class="m-4">
-						<h2
-							class="font-bold text-sm md:text-base text-gray-500"
-						>
-							· {RecommendPost.data.tags}
-						</h2>
-						<div class="flex justify-between md:flex-col">
+					<article
+						class="m-4 flex flex-col justify-between h-full md:h-auto"
+					>
+						<div class="flex flex-col">
+							<h2
+								class="font-bold text-sm md:text-base text-gray-500"
+							>
+								· {RecommendPost.data.tags}
+							</h2>
 							<h1 class="md:text-lg font-bold">
 								{RecommendPost.data.title}
 							</h1>
-							<h3>
-								{
-									RecommendPost.data.pubDate
-										.toString()
-										.slice(4, 10)
-								}
-							</h3>
 						</div>
+						<h3>
+							{RecommendPost.data.pubDate.toString().slice(4, 10)}
+						</h3>
 					</article>
 				</a>
 				<a
 					href={`/posts/${SecondPost.slug}`}
-					class="col-span-6 h-72 flex flex-col md:col-span-3 hover:scale-[0.97] duration-200 rounded-lg overflow-hidden shadow"
+					class="col-span-6 h-80 flex flex-col md:col-span-3 hover:scale-[0.97] duration-200 rounded-lg overflow-hidden shadow"
 				>
-					<div class="aspect-video w-96 md:w-[348px]">
+					<div class="aspect-video w-96 md:w-fit">
 						<Image
 							src={SecondPost.data.cover}
 							alt="Second Post's cover"
 						/>
 					</div>
-					<article class="m-4">
-						<h2 class="font-bold text-sm text-gray-500">
-							· {SecondPost.data.tags}
-						</h2>
-						<div class="flex justify-between md:flex-col">
+					<article class="m-4 flex flex-col justify-between h-full">
+						<div class="flex flex-col">
+							<h2 class="font-bold text-sm text-gray-500">
+								· {SecondPost.data.tags}
+							</h2>
 							<h1 class="font-bold">{SecondPost.data.title}</h1>
-							<h3>
-								{
-									SecondPost.data.pubDate
-										.toString()
-										.slice(4, 10)
-								}
-							</h3>
 						</div>
+						<h3>
+							{SecondPost.data.pubDate.toString().slice(4, 10)}
+						</h3>
 					</article>
 				</a>
 				<a
 					href={`/posts/${ThirdPost.slug}`}
-					class="col-span-6 h-72 flex flex-col md:col-span-3 hover:scale-[0.97] duration-200 rounded-lg overflow-hidden shadow"
+					class="col-span-6 h-80 flex flex-col md:col-span-3 hover:scale-[0.97] duration-200 rounded-lg overflow-hidden shadow"
 				>
-					<div class="aspect-video w-96 md:w-[348px]">
+					<div class="aspect-video w-96 md:w-fit">
 						<Image
 							src={ThirdPost.data.cover}
 							alt="Third Post's cover"
 						/>
 					</div>
-					<article class="m-4">
-						<h2 class="font-bold text-sm text-gray-500">
-							· {ThirdPost.data.tags}
-						</h2>
-						<div class="flex justify-between md:flex-col">
+					<article class="m-4 flex flex-col justify-between h-full">
+						<div class="flex flex-col">
+							<h2 class="font-bold text-sm text-gray-500">
+								· {ThirdPost.data.tags}
+							</h2>
 							<h1 class="font-bold">{ThirdPost.data.title}</h1>
-							<h3>
-								{ThirdPost.data.pubDate.toString().slice(4, 10)}
-							</h3>
 						</div>
+						<h3>
+							{ThirdPost.data.pubDate.toString().slice(4, 10)}
+						</h3>
 					</article>
 				</a>
 			</div>
@@ -121,14 +115,14 @@ const pageTitle = "Blog";
 							href={`/posts/${post.slug}`}
 							class="col-span-6 h-80 flex flex-col md:col-span-3 hover:scale-[0.97] duration-200 rounded-lg overflow-hidden shadow"
 						>
-							<div class="aspect-video w-96 md:w-[348px]">
+							<div class="aspect-video w-96 md:w-fit">
 								<Image
 									src={post.data.cover}
 									alt="HistoryPosts' cover"
 								/>
 							</div>
-							<article class="m-4 flex flex-col justify-between">
-								<div>
+							<article class="m-4 flex flex-col justify-between h-full">
+								<div class="flex flex-col">
 									<h2 class="font-bold text-sm text-gray-500">
 										· {post.data.tags}
 									</h2>

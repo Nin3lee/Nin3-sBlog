@@ -4,4 +4,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "About";
 ---
 
-<BaseLayout pageTitle=`Nin3's ${pageTitle}`>{pageTitle}</BaseLayout>
+<BaseLayout pageTitle=`Nin3's ${pageTitle}`>
+    <main class="w-96 md:w-[45rem] mx-auto flex flex-col gap-9 my-9">
+        {pageTitle}
+    </main>
+</BaseLayout>

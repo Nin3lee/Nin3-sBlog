@@ -22,7 +22,7 @@ const { pageTitle } = Astro.props;
         />
         <title>{pageTitle}</title>
     </head>
-    <body>
+    <body class="min-h-screen flex flex-col">
         <Nav />
         <slot />
         <Footer />

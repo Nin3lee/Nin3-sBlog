@@ -7,22 +7,20 @@ const allPosts = await getCollection("posts");
 const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
 ---
 
-<div class="min-h-screen flex flex-col">
-    <BaseLayout pageTitle=`Nin3's ${pageTitle}`>
-        <div class="w-96 md:w-[45rem] lg:w-[60rem] mx-auto flex flex-col my-9">
-            <p class="text-2xl mb-3">{pageTitle}</p>
-            <main class="grid grid-cols-2 md:grid-cols-4 gap-3">
-                {
-                    tags.map((tag) => (
-                        <a
-                            href={`/tags/${tag}`}
-                            class="bg-orange-500 rounded-full hover:scale-95 duration-200"
-                        >
-                            <p class="my-3 mx-4 text-white text-xl">#{tag}</p>
-                        </a>
-                    ))
-                }
-            </main>
-        </div>
-    </BaseLayout>
-</div>
+<BaseLayout pageTitle=`Nin3's ${pageTitle}`>
+    <div class="w-96 md:w-[45rem] mx-auto flex flex-col my-9">
+        <p class="text-2xl mb-3">{pageTitle}</p>
+        <main class="grid grid-cols-2 md:grid-cols-4 gap-3">
+            {
+                tags.map((tag) => (
+                    <a
+                        href={`/tags/${tag}`}
+                        class="bg-orange-500 rounded-full hover:scale-95 duration-200"
+                    >
+                        <p class="my-3 mx-4 text-white text-xl">#{tag}</p>
+                    </a>
+                ))
+            }
+        </main>
+    </div>
+</BaseLayout>

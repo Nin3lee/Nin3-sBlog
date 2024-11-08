@@ -10,28 +10,26 @@ PostByTime = PostByTime.sort(
 );
 ---
 
-<div class="min-h-screen flex flex-col">
-    <BaseLayout pageTitle=`Nin3's ${pageTitle}`>
-        <div class="w-96 md:w-[45rem] lg:w-[60rem] mx-auto flex flex-col my-9">
-            <p class="text-2xl mb-3">{pageTitle}</p>
-            <ul>
-                {
-                    PostByTime.map((post) => (
-                        <li class="flex">
-                            <a
-                                href={post.slug}
-                                class="mb-4 hover:scale-95 duration-200"
-                            >
-                                {post.data.title}
-                                <div class="text-gray-300">
-                                    {post.data.pubDate.toString().slice(4, 15)}
-                                    {post.data.tags}#
-                                </div>
-                            </a>
-                        </li>
-                    ))
-                }
-            </ul>
-        </div>
-    </BaseLayout>
-</div>
+<BaseLayout pageTitle=`Nin3's ${pageTitle}`>
+    <div class="w-96 md:w-[45rem] mx-auto flex flex-col my-9">
+        <p class="text-2xl mb-3">{pageTitle}</p>
+        <ul>
+            {
+                PostByTime.map((post) => (
+                    <li class="flex">
+                        <a
+                            href={post.slug}
+                            class="mb-4 hover:scale-95 duration-200"
+                        >
+                            {post.data.title}
+                            <div class="text-gray-300">
+                                {post.data.pubDate.toString().slice(4, 15)}
+                                {post.data.tags}#
+                            </div>
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
+</BaseLayout>
