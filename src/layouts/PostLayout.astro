@@ -23,9 +23,9 @@ const { frontmatter } = Astro.props;
         />
         <title>{pageTitle}</title>
     </head>
-    <body>
+    <body class="min-h-screen flex flex-col">
         <Nav />
-        <div class="w-96 md:w-[45rem] lg:w-[60rem] mx-auto flex flex-col my-9">
+        <div class="w-96 md:w-[45rem] mx-auto flex flex-col my-9">
             <h1>{frontmatter.title}</h1>
             <h3>{frontmatter.pubDate}</h3>
             <h3><em>{frontmatter.tags}</em></h3>
