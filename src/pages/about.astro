@@ -1,11 +1,14 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
 
 const pageTitle = "About";
+const allPosts = await getCollection("posts");
 ---
 
 <BaseLayout pageTitle=`Nin3's ${pageTitle}`>
     <main class="w-96 md:w-[45rem] mx-auto flex flex-col gap-9 my-9">
         {pageTitle}
+        共 {allPosts.length} 篇
     </main>
 </BaseLayout>

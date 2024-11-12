@@ -15,9 +15,10 @@ const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
                 tags.map((tag) => (
                     <a
                         href={`/tags/${tag}`}
-                        class="bg-orange-500 rounded-full hover:scale-95 duration-200"
+                        class="rounded-full hover:scale-95 duration-200 flex shadow"
                     >
-                        <p class="my-3 mx-4 text-white text-xl">#{tag}</p>
+                        <p class="my-3 mx-4 text-gray-500 font-bold">· {tag}</p>
+                        <p />
                     </a>
                 ))
             }
