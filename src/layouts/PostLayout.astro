@@ -1,48 +1,26 @@
 ---
-import Nav from "../components/Nav.astro";
-import Footer from "../components/Footer.astro";
+import BaseLayout from "./BaseLayout.astro";
 
-const { pageTitle } = Astro.props;
 const { frontmatter } = Astro.props;
 ---
 
-<!doctype html>
-<html lang="zh-CN">
-    <head>
-        <!-- General meta tag -->
-        <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, user-scalable=1"
-        />
-        <meta name="generator" content={Astro.generator} />
-        <meta
-            name="description"
-            content="Nin3's personal site for blog, sharing about UI Design, web development"
-        />
-        <title>{pageTitle}</title>
-    </head>
-    <body class="min-h-screen flex flex-col">
-        <Nav />
-        <div class="w-96 md:w-[45rem] mx-auto flex flex-col my-9">
-            <h1>{frontmatter.title}</h1>
-            <h3>{frontmatter.pubDate}</h3>
-            <h3><em>{frontmatter.tags}</em></h3>
-            <slot />
-            <hr />
-            <div>
-                {
-                    frontmatter.tags.map((tag) => (
-                        <p>
-                            <a href={`/tags/${tag}`} class="text-blue-400">
-                                {tag}
-                            </a>
-                        </p>
-                    ))
-                }
-            </div>
+<BaseLayout pageTitle={frontmatter.title}>
+    <div class="w-96 md:w-[45rem] mx-auto flex flex-col my-9">
+        <h1>{frontmatter.title}</h1>
+        <h3>{frontmatter.pubDate}</h3>
+        <h3><em>{frontmatter.tags}</em></h3>
+        <slot />
+        <hr />
+        <div>
+            {
+                frontmatter.tags.map((tag) => (
+                    <p>
+                        <a href={`/tags/${tag}`} class="text-blue-400">
+                            {tag}
+                        </a>
+                    </p>
+                ))
+            }
         </div>
-        <Footer />
-    </body>
-</html>
+    </div>
+</BaseLayout>
