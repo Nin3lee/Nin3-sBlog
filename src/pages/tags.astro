@@ -4,7 +4,16 @@ import { getCollection } from "astro:content";
 
 const pageTitle = "Tag";
 const allPosts = await getCollection("posts");
-const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
+
+const tagCounts = {};
+allPosts.forEach((post) => {
+    post.data.tags.forEach((tag) => {
+        tagCounts[tag] = (tagCounts[tag] || 0) + 1;
+    });
+});
+const sortedTags = Object.entries(tagCounts).sort(
+    (a: [string, number], b: [string, number]) => b[1] - a[1],
+);
 ---
 
 <BaseLayout pageTitle=`Nin3's ${pageTitle}`>
@@ -12,13 +21,17 @@ const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
         <p class="text-2xl mb-3">{pageTitle}</p>
         <main class="grid grid-cols-2 md:grid-cols-4 gap-3">
             {
-                tags.map((tag) => (
+                sortedTags.map(([tag, count]) => (
                     <a
                         href={`/tags/${tag}`}
-                        class="rounded-full hover:scale-95 duration-200 flex shadow"
+                        class="rounded-full hover:scale-95 duration-200 shadow bg-gray-500"
                     >
-                        <p class="my-3 mx-4 text-gray-500 font-bold">· {tag}</p>
-                        <p />
+                        <div class="my-2 mx-4 flex justify-between items-center">
+                            <p class="text-white text-sm">{tag}</p>
+                            <div class="rounded-full px-2 bg-white">
+                                <p class="text-gray-500 font-bold">{count}</p>
+                            </div>
+                        </div>
                     </a>
                 ))
             }
