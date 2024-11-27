@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
+import { tagColors, defaultTagColor } from "../style/tag";
 
 const { frontmatter } = Astro.props;
 ---
@@ -11,14 +12,18 @@ const { frontmatter } = Astro.props;
         <h3><em>{frontmatter.tags}</em></h3>
         <slot />
         <hr />
-        <div>
+        <div class="grid grid-cols-3 md:grid-cols-4 gap-3">
             {
-                frontmatter.tags.map((tag) => (
-                    <p>
-                        <a href={`/tags/${tag}`} class="text-blue-400">
-                            {tag}
-                        </a>
-                    </p>
+                frontmatter.tags.map((tag: string) => (
+                    <a
+                        href={`/tags/${tag}`}
+                        class="rounded-full hover:scale-95 duration-200 shadow"
+                        style={`background-color: ${tagColors[tag] || defaultTagColor}`}
+                    >
+                        <div class="my-2 mx-4 flex justify-between items-center">
+                            <p class="text-white text-sm">{tag}</p>
+                        </div>
+                    </a>
                 ))
             }
         </div>

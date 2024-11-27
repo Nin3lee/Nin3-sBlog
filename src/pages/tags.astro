@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
+import { tagColors, defaultTagColor } from "../style/tag";
 
 const pageTitle = "Tag";
 const allPosts = await getCollection("posts");
@@ -24,12 +25,18 @@ const sortedTags = Object.entries(tagCounts).sort(
                 sortedTags.map(([tag, count]) => (
                     <a
                         href={`/tags/${tag}`}
-                        class="rounded-full hover:scale-95 duration-200 shadow bg-gray-500"
+                        class="rounded-full hover:scale-95 duration-200 shadow"
+                        style={`background-color: ${tagColors[tag] || defaultTagColor}`}
                     >
                         <div class="my-2 mx-4 flex justify-between items-center">
                             <p class="text-white text-sm">{tag}</p>
                             <div class="rounded-full px-2 bg-white">
-                                <p class="text-gray-500 font-bold">{count}</p>
+                                <p
+                                    class="font-bold"
+                                    style={`color: ${tagColors[tag] || defaultTagColor}`}
+                                >
+                                    {count}
+                                </p>
                             </div>
                         </div>
                     </a>
