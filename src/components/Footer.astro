@@ -1,3 +1,94 @@
-<footer class="bg-green-200 mt-auto">
-    <div class="w-96 md:w-[45rem] mx-auto bg-green-100">Footer here!</div>
+<footer class="bg-[#f3f3f3] mt-auto text-xs">
+    <div
+        class="w-96 md:w-[45rem] mx-auto flex flex-col justify-evenly font-normal gap-1"
+    >
+        <div class="flex gap-2 mt-6 text-[#999] items-center">
+            Powered by
+            <div
+                class="flex gap-[4px] bg-[#D9D9D9] px-[4px] h-[20px] rounded-full items-center"
+            >
+                <a
+                    href="https://astro.build/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <!-- <Icon name="astro"class="fill-white hover:fill-blue-500 duration-200"/> -->
+                    {Astro.generator}
+                </a>
+                <a
+                    href="https://www.netlify.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <!-- <Icon name="netlify"class="fill-white hover:fill-blue-500 duration-200"/> -->
+                </a>
+                <a
+                    href="https://www.figma.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <!-- <Icon name="figma"class="fill-white hover:fill-blue-500 duration-200"/> -->
+                </a>
+                <a
+                    href="https://tailwindcss.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <!-- <Icon name="tailwind"class="fill-white hover:fill-blue-500 duration-200"/> -->
+                </a>
+            </div>
+        </div>
+        <div class="flex gap-2">
+            <span class="text-[#999]">Inspired by</span><a
+                href="https://www.anzifan.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hover:underline underline-offset-2 duration-200 hover:text-blue-500 text-[#666]"
+                >异次元de机智君</a
+            >
+        </div>
+        <div class="flex flex-row justify-between">
+            <div class="flex gap-2 items-center group">
+                <span class="text-[#999]">
+                    Re-designed & Built with <span
+                        class="font-mono group-hover:text-red-400 duration-300"
+                        >❤</span
+                    > by</span
+                ><a
+                    href="https://github.com/Nin3lee"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:underline underline-offset-2 duration-200 hover:text-blue-500 text-[#666]"
+                    >Nin3lee</a
+                >
+            </div>
+            <a
+                href="https://nin3-lee.netlify.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hover:underline underline-offset-2 duration-200 hover:text-blue-500 text-[#666] hover:fill-blue-500 fill-[#666] flex items-center gap-1"
+            >
+                <!-- <Icon name="hexo" class="" /> -->
+                <span class="">看看旧博客</span>
+            </a>
+        </div>
+        <hr />
+        <div class="flex flex-row justify-between mb-6">
+            <div>
+                <span class="text-[#999]">Copyright © 2023-2024</span>
+                <a
+                    href="/about/"
+                    class="hover:underline underline-offset-2 duration-200 text-[#666] hover:text-blue-500"
+                    >Nin3</a
+                >
+            </div>
+            <a
+                href="https://creativecommons.org/licenses/by-nc/4.0/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hover:underline underline-offset-2 duration-200 hover:text-blue-500 text-[#666]"
+                >CC BY-NC-SA 4.0</a
+            >
+        </div>
+    </div>
 </footer>

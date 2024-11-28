@@ -2,17 +2,21 @@
 import ThemeToggle from "./ThemeToggle.astro";
 ---
 
-<header class="bg-green-200">
-    <div class="w-96 md:w-[45rem] mx-auto">
-        <nav class="bg-green-100 flex justify-between">
-            <a href="/">Home</a>
-            <div class="flex gap-2">
-                <a href="/posts/">posts</a>
-                <a href="/tags/">tags</a>
-                <a href="/projects/">projects</a>
-                <a href="/about/">about</a>
-                <ThemeToggle />
-            </div>
-        </nav>
-    </div>
+<header
+    class="z-20 sticky top-0 px-6 backdrop-blur-lg bg-white/50 border-b border-gray-200"
+>
+    <nav
+        class="w-96 h-12 md:w-[45rem] flex mx-auto items-center justify-between"
+    >
+        <a href="/" class="hover:text-blue-500 duration-200">Nin3</a>
+        <div class="flex gap-2">
+            <a href="/posts/" class="hover:text-blue-500 duration-200">Posts</a>
+            <a href="/tags/" class="hover:text-blue-500 duration-200">Tags</a>
+            <a href="/projects/" class="hover:text-blue-500 duration-200"
+                >Projects</a
+            >
+            <a href="/about/" class="hover:text-blue-500 duration-200">About</a>
+            <ThemeToggle />
+        </div>
+    </nav>
 </header>
