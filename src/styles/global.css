@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+@plugin "@tailwindcss/typography";
+
+/* Font */
+/* https://docs.astro.build/zh-cn/guides/fonts/ */
+@theme {
+    --font-sans: 'Georgia', 'sans-serif';
+}

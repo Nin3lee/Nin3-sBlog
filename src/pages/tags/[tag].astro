@@ -39,7 +39,7 @@ const { posts } = Astro.props;
                 posts.map((post) => (
                     <li class="flex">
                         <a
-                            href={`/posts/${post.slug}/`}
+                            href={`/posts/${post.id}/`}
                             class="mb-6 hover:scale-95 duration-200"
                         >
                             <h1 class="text-gray-700 font-bold">
