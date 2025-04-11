@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
 
 let PostByTime = await getCollection("posts");
 PostByTime = PostByTime.sort(
@@ -15,15 +16,6 @@ import { getTagColor } from "../styles/tag.ts";
 
 <BaseLayout pageTitle=`Nin3's ${pageTitle}`>
 	<main class="w-96 md:w-[45rem] mx-auto flex flex-col gap-9 my-9">
-		<!-- Social cards & self introductionn -->
-		<section class="grid grid-cols-2 gap-8">
-			<div class="bg-blue-100 size-44 md:size-auto md:h-44">
-				self-introduction-1st
-			</div>
-			<div class="bg-blue-100 size-44 md:size-auto md:h-44">
-				self-introduction-2nd
-			</div>
-		</section>
 		<!-- Recent Posts -->
 		<section>
 			<p class="text-2xl mb-3">Recent Post</p>
@@ -49,7 +41,7 @@ import { getTagColor } from "../styles/tag.ts";
 											<h1 class="md:text-lg font-bold">{post.data.title}</h1>
 										))}
 								</div>
-								<h3>{post.data.pubDate.toString().slice(4, 10)}</h3>
+								<h3>{post.data.pubDate.toString().slice(4, 15)}</h3>
 							</article>
 						</a >
 					))
@@ -75,7 +67,7 @@ import { getTagColor } from "../styles/tag.ts";
 											<h1 class="font-bold">{post.data.title}</h1>
 										))}
 								</div>
-								<h3>{post.data.pubDate.toString().slice(4, 10)}</h3>
+								<h3>{post.data.pubDate.toString().slice(4, 15)}</h3>
 							</article>
 						</a >
 					))
@@ -107,13 +99,14 @@ import { getTagColor } from "../styles/tag.ts";
 											<h1 class="font-bold">{post.data.title}</h1>
 										))}
 								</div>
-								<h3>{post.data.pubDate.toString().slice(4, 10)}</h3>
+								<h3>{post.data.pubDate.toString().slice(4, 15)}</h3>
 							</article>
 						</a >
 					))
 				}
 			</div>
 		</section>
-		<a href="/posts/" class="mx-auto">View Posts</a>
+		<a href="/posts/" aria-label="More Posts" class="flex group mx-auto hover:text-blue-400 duration-200">
+			<Icon name="click" class="group-hover:fill-blue-400 duration-200 text-2xl"/>More Posts</a>
 	</main>
 </BaseLayout>

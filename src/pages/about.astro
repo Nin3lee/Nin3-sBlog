@@ -8,7 +8,64 @@ const allPosts = await getCollection("posts");
 
 <BaseLayout pageTitle=`Nin3's ${pageTitle}`>
     <main class="w-96 md:w-[45rem] mx-auto flex flex-col gap-9 my-9">
-        {pageTitle}
-        共 {allPosts.length} 篇
+        <p class="text-2xl mb-3">{pageTitle} me</p>
+        <div class="flex flex-col">
+            <img src="/favicon.svg" alt="avatar" class="w-16 md:w-18" />
+            <h1 class="text-base md:text-xl font-medium group text-gray-700">
+                <span class="inline-flex mt-5">
+                    <span>看起来是个</span>
+                    <span
+                        class="relative mx-2 outline-2 outline-blue-400 outline-offset-4 underline decoration-blue-400 select-all hover:bg-blue-200 duration-300"
+                    >
+                        Designer
+                        <span
+                            class="absolute h-4 w-4 md:h-4 md:w-4 -left-3 -top-3 bg-slate-100 border-2 border-blue-400"
+                        >
+                        </span>
+                        <span
+                            class="absolute h-4 w-4 md:h-4 md:w-4 -right-3 -top-3 bg-slate-100 border-2 border-blue-400"
+                        >
+                        </span>
+                        <span
+                            class="absolute h-4 w-4 md:h-4 md:w-4 -left-3 -bottom-3 bg-slate-100 border-2 border-blue-400"
+                        >
+                        </span>
+                        <span
+                            class="absolute h-4 w-4 md:h-4 md:w-4 -right-3 -bottom-3 bg-slate-100 border-2 border-blue-400"
+                        >
+                        </span>
+                    </span>
+                </span>，
+                <span class="whitespace-nowrap">
+                    <span class="font-mono">&lt;</span>
+                    <span class="select-all hover:bg-blue-200 duration-300"
+                        >Developer</span
+                    >
+                    <span class="font-mono"> /&gt;</span></span
+                >。
+                <br />
+                <br class="md:hidden" />
+                <div class="md:mt-6">
+                    <span class="whitespace-nowrap"
+                        ><ruby
+                            >敲々<rt
+                                class="opacity-0 group-hover:opacity-100 group-hover:-translate-y-0.5 text-blue-400 duration-150 ease-in-out"
+                                >qiāo qiāo</rt
+                            ></ruby
+                        >代码，<ruby
+                            >搞々<rt
+                                class="opacity-0 group-hover:opacity-100 group-hover:-translate-y-0.5 text-blue-400 duration-150 ease-in-out delay-100"
+                                >gǎo gǎo</rt
+                            ></ruby
+                        >设计，<ruby
+                            >写々<rt
+                                class="opacity-0 group-hover:opacity-100 group-hover:-translate-y-0.5 text-blue-400 duration-150 ease-in-out delay-200"
+                                >xiě xiě</rt
+                            ></ruby
+                        >博客。</span
+                    >
+                </div>
+            </h1>
+        </div>
     </main>
 </BaseLayout>

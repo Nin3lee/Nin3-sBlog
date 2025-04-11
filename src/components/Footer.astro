@@ -1,40 +1,57 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
 <footer class="bg-[#f3f3f3] mt-auto text-xs">
-    <div
-        class="w-96 md:w-[45rem] mx-auto flex flex-col justify-evenly font-normal gap-1"
-    >
+    <div class="w-96 md:w-[45rem] mx-auto flex flex-col justify-evenly gap-1">
         <div class="flex gap-2 mt-6 text-[#999] items-center">
             Powered by
             <div
-                class="flex gap-[4px] bg-[#D9D9D9] px-[4px] h-[20px] rounded-full items-center"
+                class="flex gap-[4px] bg-[#D9D9D9] px-[6px] h-[24px] rounded-full items-center"
             >
                 <a
                     href="https://astro.build/"
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label="Astro"
                 >
-                    <!-- <Icon name="astro"class="fill-white hover:fill-blue-500 duration-200"/> -->
-                    {Astro.generator}
+                    <Icon
+                        name="astro"
+                        class="hover:text-blue-500 duration-200 text-base"
+                    />
                 </a>
                 <a
                     href="https://www.netlify.com/"
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label="Netlify"
                 >
-                    <!-- <Icon name="netlify"class="fill-white hover:fill-blue-500 duration-200"/> -->
+                    <Icon
+                        name="netlify"
+                        class="hover:text-blue-500 duration-200 text-base"
+                    />
                 </a>
                 <a
                     href="https://www.figma.com/"
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label="Figma"
                 >
-                    <!-- <Icon name="figma"class="fill-white hover:fill-blue-500 duration-200"/> -->
+                    <Icon
+                        name="figma"
+                        class="hover:text-blue-500 duration-200 text-base"
+                    />
                 </a>
                 <a
                     href="https://tailwindcss.com/"
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label="Tailwind CSS"
                 >
-                    <!-- <Icon name="tailwind"class="fill-white hover:fill-blue-500 duration-200"/> -->
+                    <Icon
+                        name="tailwind"
+                        class="hover:text-blue-500 duration-200 text-base"
+                    />
                 </a>
             </div>
         </div>
@@ -66,10 +83,10 @@
                 href="https://nin3-lee.netlify.app/"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="hover:underline underline-offset-2 duration-200 hover:text-blue-500 text-[#666] hover:fill-blue-500 fill-[#666] flex items-center gap-1"
+                class="hover:underline underline-offset-2 duration-200 hover:text-blue-500 text-[#666] fill-[#666] flex items-center gap-1"
             >
-                <!-- <Icon name="hexo" class="" /> -->
-                <span class="">看看旧博客</span>
+                <Icon name="hexo" />
+                <span>看看旧博客</span>
             </a>
         </div>
         <hr style="border-style: dashed; border-color: #DFE1E6;" />

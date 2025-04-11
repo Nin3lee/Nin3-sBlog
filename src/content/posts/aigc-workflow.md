@@ -5,13 +5,16 @@ pubDate: 2024-11-19
 cover: ./images/aigc.png
 ---
 
-#
+**选用工具**：Midjourney、Photoshop
 
-**工具集 | 技术栈**：Midjourney、Photoshop
+**运营要求**：
 
-**运营要求**：主标题包含“母亲节” “Monther’s Day”；文案内容为“感谢你不是超人，却为我变成万能”。
+- 主标题包含 “母亲节”，“Monther’s Day” 字样
+- 文案内容为 “感谢你不是超人，却为我变成万能”
 
-**个人理解**：需求包含了主标题和文案部分，而作为设计师的我们，主要从现有的要求和未定义的发挥空间考虑。从海报的设计经验来讲，一张节日海报需要画面内容来填充，文本内容来点缀，因此我们从文本内容来分析画面需要什么，是效率更高的做法。从现有要求考虑，给出的内容比较常规，主标题不过多解读，但文案内容“感谢你不是超人，却为我变成万能”，其核心内容是描述者身份是一个感恩母亲的孩子，即画面中的主要内容需要出现母亲与孩子两个角色，而尽量避免只用单调的意向，如鲜花、贺卡等等。
+## 需求解读
+
+**个人理解**：需求包含了主标题和文案部分，而作为设计师的我们，主要从现有的要求和未定义的发挥空间考虑。从海报的设计经验来讲，一张节日海报需要画面内容来填充，文本内容来点缀，因此我们从文本内容来分析画面需要什么，是效率更高的做法。从现有文案内容出发，主标题用于标注出节日主题，而通过解读文案内容 “感谢你不是超人，却为我变成万能”，我们可以确定这句话是由一个感恩母亲的孩子所述，即画面中的主要内容需要出现母亲与孩子两个角色，而尽量避免只用单调的意向，如鲜花、贺卡等等。
 
 明白了我们的画面需要什么，那么我们就可以开始着手构思了，拓展思路比较简单的方式是通过对市面现有的母亲节海报进行收集，并头脑风暴提炼其中高频的关键词，发现共性和特性，这对于未来加入 Midjourney 生成图片非常有效，在集中了解后，我们可以发现合适的海报通常有这样一些属性：
 
@@ -21,34 +24,109 @@ cover: ./images/aigc.png
 
 **人物动作**：托举、依靠、手拉手、给予、帮助等。
 
-现在我们需要了解一下 Midjourney 的咒语（prompt）需要什么，访问 Midjourney [有关 Prompt 内容的官网文档](https://docs.midjourney.com/docs/prompts)，找到对于咒语构成的描述内容：
+现在我们需要了解一下构成 Midjourney 的咒语（prompt）需要什么，访问 Midjourney [有关 Prompt 内容的官网文档](https://docs.midjourney.com/docs/prompts)，能够找到一段对于咒语构成的描述内容：
 
-> Try to be clear about any context or details that are important to you. Think about:
-> - Subject: person, animal, character, location, object
-> - Medium: photo, painting, illustration, sculpture, doodle, tapestry
-> - Environment: indoors, outdoors, on the moon, underwater, in the city
-> - Lighting: soft, ambient, overcast, neon, studio lights
-> - Color: vibrant, muted, bright, monochromatic, colorful, black and white, pastel
-> - Mood: sedate, calm, raucous, energetic
-> - Composition: portrait, headshot, closeup, birds-eye view
+> Be clear about details that matter to you. Here are some areas to consider:
+> - Subject: Who or what? (person, animal, character, location, object)
+> - Medium: In what form? (photo, painting, illustration, sculpture, doodle, tapestry)
+> - Environment: Where? (indoors, outdoors, on the moon, underwater, in the city)
+> - Lighting: What kind? (soft, ambient, overcast, neon, studio lights)
+> - Color: In what shades? (vibrant, muted, bright, monochromatic, colorful, black and white, pastel)
+> - Mood: Feelings to evoke? (playful, calm, gloomy, energetic)
+> - Composition: How is it framed? (portrait, headshot, closeup, birds-eye view)
 
-尽量清楚任何对你很重要的背景或细节。想一想：
-- 主题：人、动物、人物、位置、对象
-- 媒介：照片， 绘画， 插画， 雕塑， 涂鸦， 挂毯
-- 环境：室内、室外、月球、水下、城市
-- 灯光：柔和、环境、阴天、霓虹灯、演播室灯
-- 颜色：鲜艳、柔和、明亮、单色、色彩缤纷、黑白、粉彩
-- 情绪：沉稳、平静、喧闹、精力充沛
-- 构图：肖像、头像、特写、鸟瞰
-
-其中非常清楚的告诉了我们咒语需要用哪些方面的内容来约束画面信息：
+其中非常清楚的告诉了我们，需要用哪些方面的内容来约束画面信息：
 
 **主题、媒介、环境、灯光、颜色、情绪、构图。**
 
-现在，结合文案与对咒语的了解提炼关键词：
+## 渲染尝试
+
+现在，结合文案与对咒语的了解，可以提炼出以下关键词：
 
 **超人形象的母亲托举孩子，剪影风格，氛围温馨，主色调是暖色调。**
 
-翻译成 Midjourney 识读的英文：
+编写成 Midjourney 识读的英文单词并拼接上我们强调的关键词就能构造出渲染咒语了：
 
 superwoman, short cloak, carrying a baby, silhouette, in the style of figurative minimalism, flat illustrations, warm color --s 250 --niji 5
+
+译作中文：女超人，短披风，抱着孩子，剪影，人像极简主义，扁平插画，暖色调，风格化系数，动漫风格模型。
+
+<figure>
+    <img src="/src/content/posts/images/aigc-1.png" alt="第一次尝试（形象不合适）">
+    <figcaption>第一次尝试（形象不合适）</figcaption>
+</figure>
+
+<figure>
+    <img src="/src/content/posts/images/aigc-2.png" alt="第二次尝试（氛围不贴合）">
+    <figcaption>第二次尝试（氛围不贴合）</figcaption>
+</figure>
+
+发现 Midjourney 对于 superwoman 和 short cloak 的理解过于生硬，超人类似女侠而短披风也一直类似兜帽，形似拾荒者给人的感受反而有强烈的宗教特征，好在我在查阅文档时看到了这句话：
+
+> 最好描述你想要什么，而不是你不想要什么。如果你要求一个 “没有蛋糕” 的派对，你的图片可能会包括一个蛋糕。要确保对象不在最终图像中，请尝试使用 `thee --no` 参数进行高级提示。
+
+这启发了我对于咒语修改的方向，于是添加了 `--no hooding` 参数来修正：
+
+<figure>
+    <img src="/src/content/posts/images/aigc-3.png" alt="第三次尝试（糟糕的结果#1）">
+    <figcaption>第三次尝试（糟糕的结果#1）</figcaption>
+</figure>
+
+<figure>
+    <img src="/src/content/posts/images/aigc-4.png" alt="第四次尝试（糟糕的结果#2）">
+    <figcaption>第四次尝试（糟糕的结果#2）</figcaption>
+</figure>
+
+如果说一开始两次尝试的结果还只是不太符合主题的温馨氛围，那么第三、四次的尝试则可以说是糟糕透顶了，虽然加入了避免生成某个对象的指令，结果却严重妨碍了 Midjourney 的想象空间，导致画面过于简单，只有几何图形。在这几幅生成的内容中，Midjourney 对于 silhouette 即剪影的理解过分刻板，于是我决定放弃使用剪影的方式，转而生成视觉感受更棒的具体人物形象。
+
+咒语修改方向：主体内容还是母亲怀抱孩子，但是去掉剪影关键词，限制背景颜色为白色，这一步是为了方便移除背景后在图像编辑软件中进行二次加工。
+
+咒语内容：a mother lift her baby, potrait, in the style of figurative minimalism, white background, warm color, flat illustrations, danish design --s 250 --niji 5
+
+译作中文：一个母亲托举着她的孩子，人像，人像极简主义，白色背景，暖色调，扁平插画，丹麦式设计，风格化系数，动漫风格模型。
+
+<figure>
+    <img src="/src/content/posts/images/aigc-5.png" alt="第五次渲染（服饰特征不准确）">
+    <figcaption>第五次渲染（服饰特征不准确）</figcaption>
+</figure>
+
+渲染效果急转直上，不难发现 Midjourney 对于抽象的事物，诸如对剪影的描绘，其结果是捉襟见肘的，而对于具体的描述则具有更充分的绘画空间，更好的表现力。但人物的服饰、外貌、发饰特征都仍然不够贴切，我们需要限制 Midjourney 对于所生成人物的风格。
+
+咒语修改方向：仅针对人物的特征，添加更具中式风格的描述词。
+
+咒语内容：an asian mother lift her baby, potrait, in the style of figurative minimalism, white background, warm color, flat illustrations, danish design --s 750 --niji 5
+
+译作中文：一个亚洲母亲托举着她的孩子，人像，人像极简主义，白色背景，暖色调，扁平插画，丹麦式设计，风格化系数，动漫风格模型。
+
+<figure>
+    <img src="/src/content/posts/images/aigc-6.png" alt="第六次渲染（初具成效）">
+    <figcaption>第六次渲染（初具成效）</figcaption>
+</figure>
+
+人物形象开始具有中式风格，这种时候我们可以保持咒语的主体部分，增大后缀的 `--s 250` 风格化参数到 `--s 750`，凭借渲染随机性再反复生成。`--s 250` 参数简单来理解就是风格化的程度，s 代表单词 stylize（adj. 风格化的）后跟的数字部分可以是 `0/50/100(default)/250/500/750`，数字越大就代表着风格化越强，画面效果也就越偏离原画、越具有艺术性。
+
+<figure>
+    <img src="/src/content/posts/images/aigc-7.png" alt="第七次渲染（加强风格）">
+    <figcaption>第七次渲染（加强风格）</figcaption>
+</figure>
+
+<figure>
+    <img src="/src/content/posts/images/aigc-8.png" alt="第八次渲染（选用第 4 幅）">
+    <figcaption>第八次渲染（选用第 4 幅）</figcaption>
+</figure>
+
+至此，已经可以挑选出海报的主人翁了，色彩氛围非常柔和，带有边缘光，人物表情非常自然，贴合母亲节气氛，服装样式及人物特征都满足亚洲人的特征，除了外边缘的部分形状在渲染时有些出格，主体部分都可以采用了。
+
+<figure>
+    <img src="/src/content/posts/images/aigc-9.png" alt="最终选用">
+    <figcaption>最终选用</figcaption>
+</figure>
+
+## 修改优化
+
+现在我们可以将图像下载到本地，因为我们需要的只是人物形象，那么还需要我们将白色背景去除，仅保留人物。这里推荐一个不错的网站，[pixian.ai](pixian.ai)，通过它实现上传抠图并下载带有透明背景的 png 格式图片，导入到 Photoshop 中进行进一步加工。海报目前需要添加标题内容和文案内容，挑选合适的字体，然后将主标题和副标题的差异拉开，利用样式、大小的方式形成对比。为了拉开画面层次，用主题颜色填充画面，用光源来改善人物形象和背景图案过分紧密的情况，背景则用扁平的花朵图案剪影来填充，底纹方面挑选纸面效果来铺垫。纸面效果和合理的涂鸦装饰既能让画面更具手工感，降低 Midjourney 生成内容的画面占有率，减轻过分依赖 AI 生成的嫌疑，又能贴合孩童视角的主题，增添童趣。最后为母亲画一个披风来贴合海报文案中的 “感谢你不是超人，却为我变成万能。”
+
+<figure>
+    <img src="/src/content/posts/images/aigc-10.png" alt="步骤拆分">
+    <figcaption>步骤拆分</figcaption>
+</figure>
