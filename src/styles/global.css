@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@plugin "@tailwindcss/typography";
+
+/* Font */
+/* https://docs.astro.build/zh-cn/guides/fonts/ */
+@theme {
+    --font-sans: 'Georgia', 'sans-serif';
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    background-color: #f9f9f9
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #aaa;
+    border-radius: 999px;
+}

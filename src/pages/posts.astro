@@ -1,0 +1,38 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const pageTitle = "Post";
+
+let PostByTime = await getCollection("posts");
+PostByTime = PostByTime.sort(
+    (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime(),
+);
+---
+
+<BaseLayout pageTitle=`Nin3's ${pageTitle}`>
+    <div class="w-96 md:w-[45rem] mx-auto flex flex-col my-9">
+        <p class="text-2xl mb-3">{pageTitle}</p>
+        <ul>
+            {
+                PostByTime.map((post) => (
+                    <li class="flex">
+                        <a
+                            href={post.id}
+                            class="mb-6 hover:scale-95 duration-200"
+                        >
+                            <h1 class="text-gray-700 font-bold">
+                                {post.data.title}
+                            </h1>
+                            <div class="text-gray-400">
+                                {post.data.pubDate.toString().slice(4, 10)},
+                                {post.data.pubDate.toString().slice(10, 15)} ·
+                                {post.data.tags}
+                            </div>
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
+</BaseLayout>
