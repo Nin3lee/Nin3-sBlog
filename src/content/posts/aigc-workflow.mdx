@@ -4,6 +4,18 @@ tags: ["经验"]
 pubDate: 2024-11-19
 cover: ./images/aigc.png
 ---
+import { Image } from 'astro:assets';
+import aigc1 from './images/aigc-1.png';
+import aigc2 from './images/aigc-2.png';
+import aigc3 from './images/aigc-3.png';
+import aigc4 from './images/aigc-4.png';
+import aigc5 from './images/aigc-5.png';
+import aigc6 from './images/aigc-6.png';
+import aigc7 from './images/aigc-7.png';
+import aigc8 from './images/aigc-8.png';
+import aigc9 from './images/aigc-9.png';
+import aigc10 from './images/aigc-10.png';
+
 
 **选用工具**：Midjourney、Photoshop
 
@@ -52,12 +64,12 @@ superwoman, short cloak, carrying a baby, silhouette, in the style of figurative
 译作中文：女超人，短披风，抱着孩子，剪影，人像极简主义，扁平插画，暖色调，风格化系数，动漫风格模型。
 
 <figure>
-    <img src="/src/content/posts/images/aigc-1.png" alt="第一次尝试（形象不合适）">
+    <Image src={aigc1} alt="第一次尝试（形象不合适）"/>
     <figcaption>第一次尝试（形象不合适）</figcaption>
 </figure>
 
 <figure>
-    <img src="/src/content/posts/images/aigc-2.png" alt="第二次尝试（氛围不贴合）">
+    <Image src={aigc2} inferSize alt="第二次尝试（氛围不贴合）"/>
     <figcaption>第二次尝试（氛围不贴合）</figcaption>
 </figure>
 
@@ -68,12 +80,12 @@ superwoman, short cloak, carrying a baby, silhouette, in the style of figurative
 这启发了我对于咒语修改的方向，于是添加了 `--no hooding` 参数来修正：
 
 <figure>
-    <img src="/src/content/posts/images/aigc-3.png" alt="第三次尝试（糟糕的结果#1）">
+    <Image src={aigc3} inferSize alt="第三次尝试（糟糕的结果#1）"/>
     <figcaption>第三次尝试（糟糕的结果#1）</figcaption>
 </figure>
 
 <figure>
-    <img src="/src/content/posts/images/aigc-4.png" alt="第四次尝试（糟糕的结果#2）">
+    <Image src={aigc4} inferSize alt="第四次尝试（糟糕的结果#2）"/>
     <figcaption>第四次尝试（糟糕的结果#2）</figcaption>
 </figure>
 
@@ -86,7 +98,7 @@ superwoman, short cloak, carrying a baby, silhouette, in the style of figurative
 译作中文：一个母亲托举着她的孩子，人像，人像极简主义，白色背景，暖色调，扁平插画，丹麦式设计，风格化系数，动漫风格模型。
 
 <figure>
-    <img src="/src/content/posts/images/aigc-5.png" alt="第五次渲染（服饰特征不准确）">
+    <Image src={aigc5} inferSize alt="第五次渲染（服饰特征不准确）"/>
     <figcaption>第五次渲染（服饰特征不准确）</figcaption>
 </figure>
 
@@ -99,26 +111,26 @@ superwoman, short cloak, carrying a baby, silhouette, in the style of figurative
 译作中文：一个亚洲母亲托举着她的孩子，人像，人像极简主义，白色背景，暖色调，扁平插画，丹麦式设计，风格化系数，动漫风格模型。
 
 <figure>
-    <img src="/src/content/posts/images/aigc-6.png" alt="第六次渲染（初具成效）">
+    <Image src={aigc6} inferSize alt="第六次渲染（初具成效）"/>
     <figcaption>第六次渲染（初具成效）</figcaption>
 </figure>
 
 人物形象开始具有中式风格，这种时候我们可以保持咒语的主体部分，增大后缀的 `--s 250` 风格化参数到 `--s 750`，凭借渲染随机性再反复生成。`--s 250` 参数简单来理解就是风格化的程度，s 代表单词 stylize（adj. 风格化的）后跟的数字部分可以是 `0/50/100(default)/250/500/750`，数字越大就代表着风格化越强，画面效果也就越偏离原画、越具有艺术性。
 
 <figure>
-    <img src="/src/content/posts/images/aigc-7.png" alt="第七次渲染（加强风格）">
+    <Image src={aigc7} inferSize alt="第七次渲染（加强风格）"/>
     <figcaption>第七次渲染（加强风格）</figcaption>
 </figure>
 
 <figure>
-    <img src="/src/content/posts/images/aigc-8.png" alt="第八次渲染（选用第 4 幅）">
+    <Image src={aigc8} inferSize alt="第八次渲染（选用第 4 幅）"/>
     <figcaption>第八次渲染（选用第 4 幅）</figcaption>
 </figure>
 
 至此，已经可以挑选出海报的主人翁了，色彩氛围非常柔和，带有边缘光，人物表情非常自然，贴合母亲节气氛，服装样式及人物特征都满足亚洲人的特征，除了外边缘的部分形状在渲染时有些出格，主体部分都可以采用了。
 
 <figure>
-    <img src="/src/content/posts/images/aigc-9.png" alt="最终选用">
+    <Image src={aigc9} inferSize alt="最终选用"/>
     <figcaption>最终选用</figcaption>
 </figure>
 
@@ -127,6 +139,6 @@ superwoman, short cloak, carrying a baby, silhouette, in the style of figurative
 现在我们可以将图像下载到本地，因为我们需要的只是人物形象，那么还需要我们将白色背景去除，仅保留人物。这里推荐一个不错的网站，[pixian.ai](pixian.ai)，通过它实现上传抠图并下载带有透明背景的 png 格式图片，导入到 Photoshop 中进行进一步加工。海报目前需要添加标题内容和文案内容，挑选合适的字体，然后将主标题和副标题的差异拉开，利用样式、大小的方式形成对比。为了拉开画面层次，用主题颜色填充画面，用光源来改善人物形象和背景图案过分紧密的情况，背景则用扁平的花朵图案剪影来填充，底纹方面挑选纸面效果来铺垫。纸面效果和合理的涂鸦装饰既能让画面更具手工感，降低 Midjourney 生成内容的画面占有率，减轻过分依赖 AI 生成的嫌疑，又能贴合孩童视角的主题，增添童趣。最后为母亲画一个披风来贴合海报文案中的 “感谢你不是超人，却为我变成万能。”
 
 <figure>
-    <img src="/src/content/posts/images/aigc-10.png" alt="步骤拆分">
+    <Image src={aigc10} inferSize alt="步骤拆分"/>
     <figcaption>步骤拆分</figcaption>
 </figure>
