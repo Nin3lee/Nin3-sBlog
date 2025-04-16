@@ -3,7 +3,7 @@ import { glob } from 'astro/loaders';
 
 // 为每一个集合定义一个 `loader` 和 `schema`
 const postsCollection = defineCollection({
-    loader: glob({ pattern: '**/[^_]*.md', base: "./src/content/posts" }),
+    loader: glob({ pattern: '**/[^_]*.mdx', base: "./src/content/posts" }),
     schema: ({ image }) => z.object({
         title: z.string(),
         tags: z.array(z.string()),

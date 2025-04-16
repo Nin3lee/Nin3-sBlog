@@ -15,7 +15,7 @@ import { getTagColor } from "../styles/tag.ts";
 ---
 
 <BaseLayout pageTitle=`Nin3's ${pageTitle}`>
-	<main class="w-96 md:w-[45rem] mx-auto flex flex-col gap-9 my-9">
+	<main class="w-90 md:w-[45rem] mx-auto flex flex-col gap-9 my-9">
 		<!-- Recent Posts -->
 		<section>
 			<p class="text-2xl mb-3">Recent Post</p>
@@ -26,7 +26,7 @@ import { getTagColor } from "../styles/tag.ts";
 							href={`/posts/${post.id}/`}
 							class="col-span-6 h-80 md:h-64 flex flex-col md:flex-row hover:scale-[0.97] duration-200 rounded-lg overflow-hidden shadow hover:brightness-95 bg-white"
 						>
-							<div class="aspect-video w-96 md:w-fit">
+							<div class="aspect-video w-90 md:w-fit">
 								<Image src={post.data.cover} alt="Posts' cover" />
 							</div>
 							<article class="m-4 flex flex-col justify-between h-full md:h-auto">
@@ -52,7 +52,7 @@ import { getTagColor } from "../styles/tag.ts";
 							href={`/posts/${post.id}/`}
 							class="col-span-6 h-80 flex flex-col md:col-span-3 hover:scale-[0.97] duration-200 rounded-lg overflow-hidden shadow hover:brightness-95 bg-white"
 						>
-							<div class="aspect-video w-96 md:w-fit">
+							<div class="aspect-video w-90 md:w-fit">
 								<Image src={post.data.cover} alt="Posts' cover" />
 							</div>
 							<article class="m-4 flex flex-col justify-between h-full">
@@ -84,7 +84,7 @@ import { getTagColor } from "../styles/tag.ts";
 							href={`/posts/${post.id}/`}
 							class="col-span-6 h-80 flex flex-col md:col-span-3 hover:scale-[0.97] duration-200 rounded-lg overflow-hidden shadow hover:brightness-95 bg-white"
 						>
-							<div class="aspect-video w-96 md:w-fit">
+							<div class="aspect-video w-90 md:w-fit">
 								<Image src={post.data.cover} alt="Posts' cover" />
 							</div>
 							<article class="m-4 flex flex-col justify-between h-full">
