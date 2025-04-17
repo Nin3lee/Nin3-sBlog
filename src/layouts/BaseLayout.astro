@@ -2,6 +2,8 @@
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
+import { ClientRouter } from "astro:transitions";
+import { slide } from "astro:transitions";
 
 const { pageTitle } = Astro.props;
 ---
@@ -21,11 +23,14 @@ const { pageTitle } = Astro.props;
             name="description"
             content="Nin3's personal site for blog, sharing about UI Design, web development"
         />
+        <ClientRouter />
         <title>{pageTitle}</title>
     </head>
     <body class="min-h-screen flex flex-col bg-[#f9f9f9]">
         <Nav />
-        <slot />
+        <div transition:animate={slide({ duration: "0.4s" })}>
+            <slot />
+        </div>
         <Footer />
     </body>
 </html>
