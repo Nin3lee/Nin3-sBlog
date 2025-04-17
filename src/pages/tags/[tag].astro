@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
+import { tagColors, defaultTagColor } from "../../styles/tag";
 
 export async function getStaticPaths() {
     let PostByTime = await getCollection("posts");
@@ -30,9 +31,16 @@ const { posts } = Astro.props;
     <div class="w-90 md:w-[45rem] mx-auto flex flex-col my-9">
         <div class="flex justify-between">
             <p class="text-2xl mb-3 text-gray-700 font-bold">· {tag}</p>
-            <p class="text-2xl mb-3 text-gray-500 font-bold">
-                {posts.length} 篇
-            </p>
+            {
+                [tag].map((tag) => (
+                    <h1
+                        class="text-2xl mb-3 text-gray-500 font-bold"
+                        style={`color: ${tagColors[tag] || defaultTagColor}`}
+                    >
+                        {posts.length} 篇
+                    </h1>
+                ))
+            }
         </div>
         <ul>
             {
