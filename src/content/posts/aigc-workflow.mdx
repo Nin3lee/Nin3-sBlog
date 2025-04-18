@@ -28,7 +28,7 @@ import aigc10 from './images/aigc-10.png';
 
 **个人理解**：需求包含了主标题和文案部分，而作为设计师的我们，主要从现有的要求和未定义的发挥空间考虑。从海报的设计经验来讲，一张节日海报需要画面内容来填充，文本内容来点缀，因此我们从文本内容来分析画面需要什么，是效率更高的做法。从现有文案内容出发，主标题用于标注出节日主题，而通过解读文案内容 “感谢你不是超人，却为我变成万能”，我们可以确定这句话是由一个感恩母亲的孩子所述，即画面中的主要内容需要出现母亲与孩子两个角色，而尽量避免只用单调的意向，如鲜花、贺卡等等。
 
-明白了我们的画面需要什么，那么我们就可以开始着手构思了，拓展思路比较简单的方式是通过对市面现有的母亲节海报进行收集，并头脑风暴提炼其中高频的关键词，发现共性和特性，这对于未来加入 Midjourney 生成图片非常有效，在集中了解后，我们可以发现合适的海报通常有这样一些属性：
+明白了我们的画面需要什么，那么我们就可以开始着手构思了，拓展思路更为轻松的方式是通过对市面现有的母亲节海报进行收集，并头脑风暴提炼其中高频的关键词，发现共性和特性，这对于未来加入 Midjourney 生成图片非常有效，在集中了解后，我们可以发现合适的海报通常有这样一些属性：
 
 **画面特征**：常见用剪影、背影等来概括母亲这类人物群像。
 
@@ -57,9 +57,11 @@ import aigc10 from './images/aigc-10.png';
 
 **超人形象的母亲托举孩子，剪影风格，氛围温馨，主色调是暖色调。**
 
-编写成 Midjourney 识读的英文单词并拼接上我们强调的关键词就能构造出渲染咒语了：
+翻译成 Midjourney 识读的英文单词并拼接上我们强调的关键词就能构造出渲染咒语了：
 
+```
 superwoman, short cloak, carrying a baby, silhouette, in the style of figurative minimalism, flat illustrations, warm color --s 250 --niji 5
+```
 
 译作中文：女超人，短披风，抱着孩子，剪影，人像极简主义，扁平插画，暖色调，风格化系数，动漫风格模型。
 
@@ -73,9 +75,9 @@ superwoman, short cloak, carrying a baby, silhouette, in the style of figurative
     <figcaption>第二次尝试（氛围不贴合）</figcaption>
 </figure>
 
-发现 Midjourney 对于 superwoman 和 short cloak 的理解过于生硬，超人类似女侠而短披风也一直类似兜帽，形似拾荒者给人的感受反而有强烈的宗教特征，好在我在查阅文档时看到了这句话：
+不画不知道，一画吓一跳，在绘制过程中，我发现 Midjourney 对于 superwoman 和 short cloak 这两个单词的理解过于生硬，超人被理解成女侠，而短披风外观则绘制成于兜帽，导致外形更像是个拾荒者，给人的感受就像带有强烈的宗教意味。不过好在我在查阅文档时看到了这句话：
 
-> 最好描述你想要什么，而不是你不想要什么。如果你要求一个 “没有蛋糕” 的派对，你的图片可能会包括一个蛋糕。要确保对象不在最终图像中，请尝试使用 `thee --no` 参数进行高级提示。
+> 最好描述你想要什么，而不是你不想要什么。如果你要求一个 “没有蛋糕” 的派对，你的图片可能会包括一个蛋糕。要确保对象不在最终图像中，请尝试使用 `thee --no` 参数进行高级提示。
 
 这启发了我对于咒语修改的方向，于是添加了 `--no hooding` 参数来修正：
 
@@ -89,11 +91,13 @@ superwoman, short cloak, carrying a baby, silhouette, in the style of figurative
     <figcaption>第四次尝试（糟糕的结果#2）</figcaption>
 </figure>
 
-如果说一开始两次尝试的结果还只是不太符合主题的温馨氛围，那么第三、四次的尝试则可以说是糟糕透顶了，虽然加入了避免生成某个对象的指令，结果却严重妨碍了 Midjourney 的想象空间，导致画面过于简单，只有几何图形。在这几幅生成的内容中，Midjourney 对于 silhouette 即剪影的理解过分刻板，于是我决定放弃使用剪影的方式，转而生成视觉感受更棒的具体人物形象。
+如果说一开始两次尝试的结果还只是不太符合主题的温馨氛围，那么第三、四次的尝试则可以说是糟糕透顶了，虽然加入了避免生成某个对象的指令，结果却严重妨碍了 Midjourney 的想象空间，导致画面过于简单，只有几何图形。在这几幅生成的内容中，Midjourney 对于 silhouette 即剪影的理解过分刻板，于是我决定放弃使用剪影的方式，转而生成视觉效果更棒的具体人物形象。
 
 咒语修改方向：主体内容还是母亲怀抱孩子，但是去掉剪影关键词，限制背景颜色为白色，这一步是为了方便移除背景后在图像编辑软件中进行二次加工。
 
-咒语内容：a mother lift her baby, potrait, in the style of figurative minimalism, white background, warm color, flat illustrations, danish design --s 250 --niji 5
+```
+a mother lift her baby, potrait, in the style of figurative minimalism, white background, warm color, flat illustrations, danish design --s 250 --niji 5
+```
 
 译作中文：一个母亲托举着她的孩子，人像，人像极简主义，白色背景，暖色调，扁平插画，丹麦式设计，风格化系数，动漫风格模型。
 
@@ -106,7 +110,9 @@ superwoman, short cloak, carrying a baby, silhouette, in the style of figurative
 
 咒语修改方向：仅针对人物的特征，添加更具中式风格的描述词。
 
-咒语内容：an asian mother lift her baby, potrait, in the style of figurative minimalism, white background, warm color, flat illustrations, danish design --s 750 --niji 5
+```
+an asian mother lift her baby, potrait, in the style of figurative minimalism, white background, warm color, flat illustrations, danish design --s 750 --niji 5
+```
 
 译作中文：一个亚洲母亲托举着她的孩子，人像，人像极简主义，白色背景，暖色调，扁平插画，丹麦式设计，风格化系数，动漫风格模型。
 
@@ -142,3 +148,7 @@ superwoman, short cloak, carrying a baby, silhouette, in the style of figurative
     <Image src={aigc10} inferSize alt="步骤拆分"/>
     <figcaption>步骤拆分</figcaption>
 </figure>
+
+## 一点点收获
+
+诚实地说，整个生成的流程对于没有什么 Midjourney 使用经验的我来说是有些阻力的，暂且不谈对于咒语的消化和分解，更多的问题集中在渲染画面在最终呈现之前，其实仍暗含着许多不可控的随机性：画面内容是否准确？有无逻辑硬伤？这些都需要再斟酌，能够直接利用生成的结果不做任何加工而产出面向市场的海报，本身就是对现阶段 AIGC 的一种高估，二次加工是必然的。但是也正是因为 Midjourney 的随机性，我才从开始的创作思路找到了新的路径，并顺利地将海报落地。可以说，它很擅长辅助我**完成一些从零到一的工作**，它的杀手锏是启发我，而不是将一个任务落地。

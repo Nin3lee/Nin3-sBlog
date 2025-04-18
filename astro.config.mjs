@@ -9,5 +9,11 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
 
-  integrations: [icon(), mdx()]
+  integrations: [icon(), mdx()],
+
+  markdown: {
+    shikiConfig: {
+      wrap: true,
+    }
+  }
 });
