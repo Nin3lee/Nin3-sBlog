@@ -10,10 +10,17 @@
 
 ::-webkit-scrollbar {
     width: 6px;
-    background-color: #f9f9f9
 }
 
 ::-webkit-scrollbar-thumb {
     background-color: #aaa;
     border-radius: 999px;
+}
+
+body {
+    background-size: 7px 7px;
+    background-image:
+        /* linear-gradient(to right, #f4f4f4 1px, transparent 1px),
+        linear-gradient(to bottom, #f4f4f4 1px, transparent 1px); */
+        radial-gradient(#e9e9e9 .75px, #fff .75px)
 }

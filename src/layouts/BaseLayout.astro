@@ -26,7 +26,7 @@ const { pageTitle } = Astro.props;
         <ClientRouter />
         <title>{pageTitle}</title>
     </head>
-    <body class="min-h-screen flex flex-col bg-[#f9f9f9]">
+    <body class="min-h-screen flex flex-col">
         <Nav />
         <div transition:animate={slide({ duration: "0.4s" })}>
             <slot />
