@@ -17,8 +17,54 @@ import { getTagColor } from "../styles/tag.ts";
 <BaseLayout pageTitle=`Nin3's ${pageTitle}`>
 	<main class="w-90 md:w-[45rem] mx-auto flex flex-col gap-9 my-9">
 		<!-- Recent Posts -->
+		 <section>
+			<div class="flex flex-col">
+				<h1 class="text-base md:text-xl font-medium group text-gray-700">
+					<span>Hi, Nin3 there.</span>
+					<br />
+					<br class="md:hidden" />
+					<span class="inline-flex md:mt-6">
+						<a class="relative mx-2 outline-2 outline-blue-400 outline-offset-4 underline decoration-blue-400 select-all hover:bg-blue-200 duration-300" href="https://dribbble.com/Nin3" target="_blank">
+							Designer
+							<span class="absolute h-4 w-4 md:h-4 md:w-4 -left-3 -top-3 bg-slate-100 border-2 border-blue-400"></span>
+							<span class="absolute h-4 w-4 md:h-4 md:w-4 -right-3 -top-3 bg-slate-100 border-2 border-blue-400"></span>
+							<span class="absolute h-4 w-4 md:h-4 md:w-4 -left-3 -bottom-3 bg-slate-100 border-2 border-blue-400"></span>
+							<span class="absolute h-4 w-4 md:h-4 md:w-4 -right-3 -bottom-3 bg-slate-100 border-2 border-blue-400"></span>
+						</a>
+					</span>，
+					<span class="whitespace-nowrap">
+						<span class="font-mono">&lt;</span>
+						<a class="select-all hover:bg-blue-200 duration-300" href="https://github.com/Nin3lee" target="_blank">Developer</a>
+						<span class="font-mono"> /&gt;</span>，
+						<a class="select-all hover:bg-blue-200 duration-300" href="https://astro.badg.es/contributor/Nin3lee/" target="_blank">Contributor</a>
+					</span>。
+					<br />
+					<br class="md:hidden" />
+					<div class="md:mt-6">
+						<span class="whitespace-nowrap"
+							><ruby
+								>敲々<rt
+									class="opacity-0 group-hover:opacity-100 group-hover:-translate-y-0.5 text-blue-400 duration-150 ease-in-out"
+									>qiāo qiāo</rt
+								></ruby
+							>代码，<ruby
+								>搞々<rt
+									class="opacity-0 group-hover:opacity-100 group-hover:-translate-y-0.5 text-blue-400 duration-150 ease-in-out delay-100"
+									>gǎo gǎo</rt
+								></ruby
+							>设计，<ruby
+								>写々<rt
+									class="opacity-0 group-hover:opacity-100 group-hover:-translate-y-0.5 text-blue-400 duration-150 ease-in-out delay-200"
+									>xiě xiě</rt
+								></ruby
+							>博客。</span
+						>
+					</div>
+				</h1>
+			</div>
+		 </section>
 		<section>
-			<p class="text-2xl mb-3">Recent Post</p>
+			<p class="text-2xl mb-3">Recent Posts</p>
 			<div class="grid grid-cols-6 gap-6">
 				{
 					PostByTime.slice(0,1).map((post) => (
@@ -76,7 +122,7 @@ import { getTagColor } from "../styles/tag.ts";
 			<!-- History Posts -->
 		</section>
 		<section>
-			<p class="text-2xl mb-3">History Archieve</p>
+			<p class="text-2xl mb-3">History Archive</p>
 			<div class="grid grid-cols-6 gap-6">
 				{
 					PostByTime.slice(3,5).map((post) => (
