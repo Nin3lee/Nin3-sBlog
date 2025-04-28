@@ -59,11 +59,18 @@ import aigc10 from './images/aigc-10.png';
 
 翻译成 Midjourney 识读的英文单词并拼接上我们强调的关键词就能构造出渲染咒语了：
 
+```md title="prompt-1" wrap
+superwoman, 
+short cloak, 
+carrying a baby, 
+silhouette, 
+in the style of figurative minimalism,
+flat illustrations,
+warm color
+--s 250
+--niji 5 
+<!-- 译作中文：女超人，短披风，抱着孩子，剪影，人像极简主义，扁平插画，暖色调，风格化系数，动漫风格模型。 -->
 ```
-superwoman, short cloak, carrying a baby, silhouette, in the style of figurative minimalism, flat illustrations, warm color --s 250 --niji 5
-```
-
-译作中文：女超人，短披风，抱着孩子，剪影，人像极简主义，扁平插画，暖色调，风格化系数，动漫风格模型。
 
 <figure>
     <Image src={aigc1} alt="第一次尝试（形象不合适）"/>
@@ -95,11 +102,21 @@ superwoman, short cloak, carrying a baby, silhouette, in the style of figurative
 
 咒语修改方向：主体内容还是母亲怀抱孩子，但是去掉剪影关键词，限制背景颜色为白色，这一步是为了方便移除背景后在图像编辑软件中进行二次加工。
 
-```
-a mother lift her baby, potrait, in the style of figurative minimalism, white background, warm color, flat illustrations, danish design --s 250 --niji 5
-```
+```md title="prompt-2" ins={3-4,9} del={1-2} wrap
+superwoman,
+short cloak,
+a mother lift her baby,
+potrait,
+danish design,
+in the style of figurative minimalism,
+warm color,
+flat illustrations,
+white background 
+--s 250 
+--niji 5
 
-译作中文：一个母亲托举着她的孩子，人像，人像极简主义，白色背景，暖色调，扁平插画，丹麦式设计，风格化系数，动漫风格模型。
+<!-- 译作中文：一个母亲托举着她的孩子，人像，人像极简主义，白色背景，暖色调，扁平插画，丹麦式设计，风格化系数，动漫风格模型。 -->
+```
 
 <figure>
     <Image src={aigc5} inferSize alt="第五次渲染（服饰特征不准确）"/>
@@ -110,11 +127,20 @@ a mother lift her baby, potrait, in the style of figurative minimalism, white ba
 
 咒语修改方向：仅针对人物的特征，添加更具中式风格的描述词。
 
-```
-an asian mother lift her baby, potrait, in the style of figurative minimalism, white background, warm color, flat illustrations, danish design --s 750 --niji 5
-```
+```md title="prompt-3" ins={2} del={1} wrap
+a mother lift her baby,
+an asian mother lift her baby,
+potrait,
+danish design
+in the style of figurative minimalism,
+warm color,
+flat illustrations,
+white background
+--s 250
+--niji 5
 
-译作中文：一个亚洲母亲托举着她的孩子，人像，人像极简主义，白色背景，暖色调，扁平插画，丹麦式设计，风格化系数，动漫风格模型。
+<!-- 译作中文：一个亚洲母亲托举着她的孩子，人像，人像极简主义，白色背景，暖色调，扁平插画，丹麦式设计，风格化系数，动漫风格模型。 -->
+```
 
 <figure>
     <Image src={aigc6} inferSize alt="第六次渲染（初具成效）"/>
@@ -122,6 +148,20 @@ an asian mother lift her baby, potrait, in the style of figurative minimalism, w
 </figure>
 
 人物形象开始具有中式风格，这种时候我们可以保持咒语的主体部分，增大后缀的 `--s 250` 风格化参数到 `--s 750`，凭借渲染随机性再反复生成。`--s 250` 参数简单来理解就是风格化的程度，s 代表单词 stylize（adj. 风格化的）后跟的数字部分可以是 `0/50/100(default)/250/500/750`，数字越大就代表着风格化越强，画面效果也就越偏离原画、越具有艺术性。
+
+```md title="prompt-4" ins={10} del={9} wrap
+a mother lift her baby,
+an asian mother lift her baby,
+potrait,
+danish design
+in the style of figurative minimalism,
+warm color,
+flat illustrations,
+white background
+--s 250
+--s 750
+--niji 5
+```
 
 <figure>
     <Image src={aigc7} inferSize alt="第七次渲染（加强风格）"/>

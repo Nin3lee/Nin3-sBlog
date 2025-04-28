@@ -8,15 +8,15 @@ dependencies:
   '@astrojs/mdx':
     specifier: ^4.2.4
     version: 4.2.4(astro@5.6.1)
-  '@astrojs/tailwind':
-    specifier: ^6.0.2
-    version: 6.0.2(astro@5.6.1)(tailwindcss@4.0.5)
   '@tailwindcss/vite':
     specifier: ^4.0.5
     version: 4.0.5(vite@6.2.5)
   astro:
     specifier: ^5.6.1
     version: 5.6.1(typescript@5.6.3)
+  astro-expressive-code:
+    specifier: ^0.41.2
+    version: 0.41.2(astro@5.6.1)
   astro-icon:
     specifier: ^1.1.5
     version: 1.1.5
@@ -112,21 +112,6 @@ packages:
       prismjs: 1.29.0
     dev: false
 
-  /@astrojs/tailwind@6.0.2(astro@5.6.1)(tailwindcss@4.0.5):
-    resolution: {integrity: sha512-j3mhLNeugZq6A8dMNXVarUa8K6X9AW+QHU9u3lKNrPLMHhOQ0S7VeWhHwEeJFpEK1BTKEUY1U78VQv2gN6hNGg==, tarball: https://registry.npmmirror.com/@astrojs/tailwind/-/tailwind-6.0.2.tgz}
-    peerDependencies:
-      astro: ^3.0.0 || ^4.0.0 || ^5.0.0
-      tailwindcss: ^3.0.24
-    dependencies:
-      astro: 5.6.1(typescript@5.6.3)
-      autoprefixer: 10.4.21(postcss@8.5.3)
-      postcss: 8.5.3
-      postcss-load-config: 4.0.2(postcss@8.5.3)
-      tailwindcss: 4.0.5
-    transitivePeerDependencies:
-      - ts-node
-    dev: false
-
   /@astrojs/telemetry@3.2.0:
     resolution: {integrity: sha512-wxhSKRfKugLwLlr4OFfcqovk+LIFtKwLyGPqMsv+9/ibqqnW3Gv7tBhtKEb0gAyUAC4G9BTVQeQahqnQAhd6IQ==, tarball: https://registry.npmmirror.com/@astrojs/telemetry/-/telemetry-3.2.0.tgz}
     engines: {node: ^18.17.1 || ^20.3.0 || >=22.0.0}
@@ -166,6 +151,11 @@ packages:
     dependencies:
       '@babel/helper-string-parser': 7.25.9
       '@babel/helper-validator-identifier': 7.25.9
+    dev: false
+
+  /@ctrl/tinycolor@4.1.0:
+    resolution: {integrity: sha512-WyOx8cJQ+FQus4Mm4uPIZA64gbk3Wxh0so5Lcii0aJifqwoVOlfFtorjLE0Hen4OYyHZMXDWqMmaQemBhgxFRQ==, tarball: https://registry.npmmirror.com/@ctrl/tinycolor/-/tinycolor-4.1.0.tgz}
+    engines: {node: '>=14'}
     dev: false
 
   /@emnapi/runtime@1.4.0:
@@ -400,6 +390,39 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
+
+  /@expressive-code/core@0.41.2:
+    resolution: {integrity: sha512-AJW5Tp9czbLqKMzwudL9Rv4js9afXBxkSGLmCNPq1iRgAYcx9NkTPJiSNCesjKRWoVC328AdSu6fqrD22zDgDg==, tarball: https://registry.npmmirror.com/@expressive-code/core/-/core-0.41.2.tgz}
+    dependencies:
+      '@ctrl/tinycolor': 4.1.0
+      hast-util-select: 6.0.4
+      hast-util-to-html: 9.0.5
+      hast-util-to-text: 4.0.2
+      hastscript: 9.0.1
+      postcss: 8.5.3
+      postcss-nested: 6.2.0(postcss@8.5.3)
+      unist-util-visit: 5.0.0
+      unist-util-visit-parents: 6.0.1
+    dev: false
+
+  /@expressive-code/plugin-frames@0.41.2:
+    resolution: {integrity: sha512-pfy0hkJI4nbaONjmksFDcuHmIuyPTFmi1JpABe4q2ajskiJtfBf+WDAL2pg595R9JNoPrrH5+aT9lbkx2noicw==, tarball: https://registry.npmmirror.com/@expressive-code/plugin-frames/-/plugin-frames-0.41.2.tgz}
+    dependencies:
+      '@expressive-code/core': 0.41.2
+    dev: false
+
+  /@expressive-code/plugin-shiki@0.41.2:
+    resolution: {integrity: sha512-xD4zwqAkDccXqye+235BH5bN038jYiSMLfUrCOmMlzxPDGWdxJDk5z4uUB/aLfivEF2tXyO2zyaarL3Oqht0fQ==, tarball: https://registry.npmmirror.com/@expressive-code/plugin-shiki/-/plugin-shiki-0.41.2.tgz}
+    dependencies:
+      '@expressive-code/core': 0.41.2
+      shiki: 3.3.0
+    dev: false
+
+  /@expressive-code/plugin-text-markers@0.41.2:
+    resolution: {integrity: sha512-JFWBz2qYxxJOJkkWf96LpeolbnOqJY95TvwYc0hXIHf9oSWV0h0SY268w/5N3EtQaD9KktzDE+VIVwb9jdb3nw==, tarball: https://registry.npmmirror.com/@expressive-code/plugin-text-markers/-/plugin-text-markers-0.41.2.tgz}
+    dependencies:
+      '@expressive-code/core': 0.41.2
+    dev: false
 
   /@iconify/tools@4.1.2:
     resolution: {integrity: sha512-q6NzLQYEN9zkDfcyBqD3vItHcZw97w/s++3H3TBxUORr57EfHxj6tOW6fyufDjMq+Vl56WXWaPx1csBPYlI5CA==, tarball: https://registry.npmmirror.com/@iconify/tools/-/tools-4.1.2.tgz}
@@ -1065,12 +1088,29 @@ packages:
       hast-util-to-html: 9.0.5
     dev: false
 
+  /@shikijs/core@3.3.0:
+    resolution: {integrity: sha512-CovkFL2WVaHk6PCrwv6ctlmD4SS1qtIfN8yEyDXDYWh4ONvomdM9MaFw20qHuqJOcb8/xrkqoWQRJ//X10phOQ==, tarball: https://registry.npmmirror.com/@shikijs/core/-/core-3.3.0.tgz}
+    dependencies:
+      '@shikijs/types': 3.3.0
+      '@shikijs/vscode-textmate': 10.0.2
+      '@types/hast': 3.0.4
+      hast-util-to-html: 9.0.5
+    dev: false
+
   /@shikijs/engine-javascript@3.2.1:
     resolution: {integrity: sha512-eMdcUzN3FMQYxOmRf2rmU8frikzoSHbQDFH2hIuXsrMO+IBOCI9BeeRkCiBkcLDHeRKbOCtYMJK3D6U32ooU9Q==, tarball: https://registry.npmmirror.com/@shikijs/engine-javascript/-/engine-javascript-3.2.1.tgz}
     dependencies:
       '@shikijs/types': 3.2.1
       '@shikijs/vscode-textmate': 10.0.2
       oniguruma-to-es: 4.1.0
+    dev: false
+
+  /@shikijs/engine-javascript@3.3.0:
+    resolution: {integrity: sha512-XlhnFGv0glq7pfsoN0KyBCz9FJU678LZdQ2LqlIdAj6JKsg5xpYKay3DkazXWExp3DTJJK9rMOuGzU2911pg7Q==, tarball: https://registry.npmmirror.com/@shikijs/engine-javascript/-/engine-javascript-3.3.0.tgz}
+    dependencies:
+      '@shikijs/types': 3.3.0
+      '@shikijs/vscode-textmate': 10.0.2
+      oniguruma-to-es: 4.3.1
     dev: false
 
   /@shikijs/engine-oniguruma@3.2.1:
@@ -1080,10 +1120,23 @@ packages:
       '@shikijs/vscode-textmate': 10.0.2
     dev: false
 
+  /@shikijs/engine-oniguruma@3.3.0:
+    resolution: {integrity: sha512-l0vIw+GxeNU7uGnsu6B+Crpeqf+WTQ2Va71cHb5ZYWEVEPdfYwY5kXwYqRJwHrxz9WH+pjSpXQz+TJgAsrkA5A==, tarball: https://registry.npmmirror.com/@shikijs/engine-oniguruma/-/engine-oniguruma-3.3.0.tgz}
+    dependencies:
+      '@shikijs/types': 3.3.0
+      '@shikijs/vscode-textmate': 10.0.2
+    dev: false
+
   /@shikijs/langs@3.2.1:
     resolution: {integrity: sha512-If0iDHYRSGbihiA8+7uRsgb1er1Yj11pwpX1c6HLYnizDsKAw5iaT3JXj5ZpaimXSWky/IhxTm7C6nkiYVym+A==, tarball: https://registry.npmmirror.com/@shikijs/langs/-/langs-3.2.1.tgz}
     dependencies:
       '@shikijs/types': 3.2.1
+    dev: false
+
+  /@shikijs/langs@3.3.0:
+    resolution: {integrity: sha512-zt6Kf/7XpBQKSI9eqku+arLkAcDQ3NHJO6zFjiChI8w0Oz6Jjjay7pToottjQGjSDCFk++R85643WbyINcuL+g==, tarball: https://registry.npmmirror.com/@shikijs/langs/-/langs-3.3.0.tgz}
+    dependencies:
+      '@shikijs/types': 3.3.0
     dev: false
 
   /@shikijs/themes@3.2.1:
@@ -1092,8 +1145,21 @@ packages:
       '@shikijs/types': 3.2.1
     dev: false
 
+  /@shikijs/themes@3.3.0:
+    resolution: {integrity: sha512-tXeCvLXBnqq34B0YZUEaAD1lD4lmN6TOHAhnHacj4Owh7Ptb/rf5XCDeROZt2rEOk5yuka3OOW2zLqClV7/SOg==, tarball: https://registry.npmmirror.com/@shikijs/themes/-/themes-3.3.0.tgz}
+    dependencies:
+      '@shikijs/types': 3.3.0
+    dev: false
+
   /@shikijs/types@3.2.1:
     resolution: {integrity: sha512-/NTWAk4KE2M8uac0RhOsIhYQf4pdU0OywQuYDGIGAJ6Mjunxl2cGiuLkvu4HLCMn+OTTLRWkjZITp+aYJv60yA==, tarball: https://registry.npmmirror.com/@shikijs/types/-/types-3.2.1.tgz}
+    dependencies:
+      '@shikijs/vscode-textmate': 10.0.2
+      '@types/hast': 3.0.4
+    dev: false
+
+  /@shikijs/types@3.3.0:
+    resolution: {integrity: sha512-KPCGnHG6k06QG/2pnYGbFtFvpVJmC3uIpXrAiPrawETifujPBv0Se2oUxm5qYgjCvGJS9InKvjytOdN+bGuX+Q==, tarball: https://registry.npmmirror.com/@shikijs/types/-/types-3.3.0.tgz}
     dependencies:
       '@shikijs/vscode-textmate': 10.0.2
       '@types/hast': 3.0.4
@@ -1396,6 +1462,15 @@ packages:
     hasBin: true
     dev: false
 
+  /astro-expressive-code@0.41.2(astro@5.6.1):
+    resolution: {integrity: sha512-HN0jWTnhr7mIV/2e6uu4PPRNNo/k4UEgTLZqbp3MrHU+caCARveG2yZxaZVBmxyiVdYqW5Pd3u3n2zjnshixbw==, tarball: https://registry.npmmirror.com/astro-expressive-code/-/astro-expressive-code-0.41.2.tgz}
+    peerDependencies:
+      astro: ^4.0.0-beta || ^5.0.0-beta || ^3.3.0
+    dependencies:
+      astro: 5.6.1(typescript@5.6.3)
+      rehype-expressive-code: 0.41.2
+    dev: false
+
   /astro-icon@1.1.5:
     resolution: {integrity: sha512-CJYS5nWOw9jz4RpGWmzNQY7D0y2ZZacH7atL2K9DeJXJVaz7/5WrxeyIxO8KASk1jCM96Q4LjRx/F3R+InjJrw==, tarball: https://registry.npmmirror.com/astro-icon/-/astro-icon-1.1.5.tgz}
     dependencies:
@@ -1510,22 +1585,6 @@ packages:
     resolution: {integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==, tarball: https://registry.npmmirror.com/asynckit/-/asynckit-0.4.0.tgz}
     dev: false
 
-  /autoprefixer@10.4.21(postcss@8.5.3):
-    resolution: {integrity: sha512-O+A6LWV5LDHSJD3LjHYoNi4VLsj/Whi7k6zG12xTYaU4cQ8oxQGckXNX8cRHK5yOZ/ppVHe0ZBXGzSV9jXdVbQ==, tarball: https://registry.npmmirror.com/autoprefixer/-/autoprefixer-10.4.21.tgz}
-    engines: {node: ^10 || ^12 || >=14}
-    hasBin: true
-    peerDependencies:
-      postcss: ^8.1.0
-    dependencies:
-      browserslist: 4.24.4
-      caniuse-lite: 1.0.30001712
-      fraction.js: 4.3.7
-      normalize-range: 0.1.2
-      picocolors: 1.1.1
-      postcss: 8.5.3
-      postcss-value-parser: 4.2.0
-    dev: false
-
   /axios@1.8.4:
     resolution: {integrity: sha512-eBSYY4Y68NNlHbHBMdeDmKNtDgXWhQsJcGqzO3iLUM0GraQFSS9cVgPX5I9b3lbdFKyYoAEGAZF1DwhTaljNAw==, tarball: https://registry.npmmirror.com/axios/-/axios-1.8.4.tgz}
     dependencies:
@@ -1549,6 +1608,10 @@ packages:
     resolution: {integrity: sha512-kwDPIFCGx0NZHog36dj+tHiwP4QMzsZ3AgMViUBKI0+V5n4U0ufTCUMhnQ04diaRI8EX/QcPfql7zlhZ7j4zgg==, tarball: https://registry.npmmirror.com/base-64/-/base-64-1.0.0.tgz}
     dev: false
 
+  /bcp-47-match@2.0.3:
+    resolution: {integrity: sha512-JtTezzbAibu8G0R9op9zb3vcWZd9JF6M0xOYGPn0fNCd7wOpRB1mU2mH9T8gaBGbAAyIIVgB2G7xG0GP98zMAQ==, tarball: https://registry.npmmirror.com/bcp-47-match/-/bcp-47-match-2.0.3.tgz}
+    dev: false
+
   /boolbase@1.0.0:
     resolution: {integrity: sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww==, tarball: https://registry.npmmirror.com/boolbase/-/boolbase-1.0.0.tgz}
     dev: false
@@ -1567,17 +1630,6 @@ packages:
       wrap-ansi: 9.0.0
     dev: false
 
-  /browserslist@4.24.4:
-    resolution: {integrity: sha512-KDi1Ny1gSePi1vm0q4oxSF8b4DR44GF4BbmS2YdhPLOEqd8pDviZOGH/GsmRwoWJ2+5Lr085X7naowMwKHDG1A==, tarball: https://registry.npmmirror.com/browserslist/-/browserslist-4.24.4.tgz}
-    engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
-    hasBin: true
-    dependencies:
-      caniuse-lite: 1.0.30001712
-      electron-to-chromium: 1.5.134
-      node-releases: 2.0.19
-      update-browserslist-db: 1.1.1(browserslist@4.24.4)
-    dev: false
-
   /buffer-crc32@0.2.13:
     resolution: {integrity: sha512-VO9Ht/+p3SN7SKWqcrgEzjGbRSJYTx+Q1pTQC0wrWqHx0vpJraQ6GtHx8tvcg1rlK1byhU5gccxgOgj7B0TDkQ==, tarball: https://registry.npmmirror.com/buffer-crc32/-/buffer-crc32-0.2.13.tgz}
     dev: false
@@ -1593,10 +1645,6 @@ packages:
   /camelcase@8.0.0:
     resolution: {integrity: sha512-8WB3Jcas3swSvjIeA2yvCJ+Miyz5l1ZmB6HFb9R1317dt9LCQoswg/BGrmAmkWVEszSrrg4RwmO46qIm2OEnSA==, tarball: https://registry.npmmirror.com/camelcase/-/camelcase-8.0.0.tgz}
     engines: {node: '>=16'}
-    dev: false
-
-  /caniuse-lite@1.0.30001712:
-    resolution: {integrity: sha512-MBqPpGYYdQ7/hfKiet9SCI+nmN5/hp4ZzveOJubl5DTAMa5oggjAuoi0Z4onBpKPFI2ePGnQuQIzF3VxDjDJig==, tarball: https://registry.npmmirror.com/caniuse-lite/-/caniuse-lite-1.0.30001712.tgz}
     dev: false
 
   /ccount@2.0.1:
@@ -1766,6 +1814,10 @@ packages:
       nth-check: 2.1.1
     dev: false
 
+  /css-selector-parser@3.1.2:
+    resolution: {integrity: sha512-WfUcL99xWDs7b3eZPoRszWVfbNo8ErCF15PTvVROjkShGlAfjIkG6hlfj/sl6/rfo5Q9x9ryJ3VqVnAZDA+gcw==, tarball: https://registry.npmmirror.com/css-selector-parser/-/css-selector-parser-3.1.2.tgz}
+    dev: false
+
   /css-tree@2.2.1:
     resolution: {integrity: sha512-OA0mILzGc1kCOCSJerOeqDxDQ4HOh+G8NbOJFOTgOCzpw7fCBubk0fEyxp8AgOL/jvLgYA/uV0cMbe43ElF1JA==, tarball: https://registry.npmmirror.com/css-tree/-/css-tree-2.2.1.tgz}
     engines: {node: ^10 || ^12.20.0 || ^14.13.0 || >=15.0.0, npm: '>=7.0.0'}
@@ -1869,6 +1921,11 @@ packages:
     engines: {node: '>=0.3.1'}
     dev: false
 
+  /direction@2.0.1:
+    resolution: {integrity: sha512-9S6m9Sukh1cZNknO1CWAr2QAWsbKLafQiyM5gZ7VgXHeuaoUwffKN4q6NC4A/Mf9iiPlOXQEKW/Mv/mh9/3YFA==, tarball: https://registry.npmmirror.com/direction/-/direction-2.0.1.tgz}
+    hasBin: true
+    dev: false
+
   /dlv@1.1.3:
     resolution: {integrity: sha512-+HlytyjlPKnIG8XuRG8WvmBP8xs8P71y+SKKS6ZXWoEgLuePxtDoUEiH7WkdePWrQ5JBpE6aoVqfZfJUQkjXwA==, tarball: https://registry.npmmirror.com/dlv/-/dlv-1.1.3.tgz}
     dev: false
@@ -1912,10 +1969,6 @@ packages:
       call-bind-apply-helpers: 1.0.2
       es-errors: 1.3.0
       gopd: 1.2.0
-    dev: false
-
-  /electron-to-chromium@1.5.134:
-    resolution: {integrity: sha512-zSwzrLg3jNP3bwsLqWHmS5z2nIOQ5ngMnfMZOWWtXnqqQkPVyOipxK98w+1beLw1TB+EImPNcG8wVP/cLVs2Og==, tarball: https://registry.npmmirror.com/electron-to-chromium/-/electron-to-chromium-1.5.134.tgz}
     dev: false
 
   /emoji-regex-xs@1.0.0:
@@ -2038,11 +2091,6 @@ packages:
       '@esbuild/win32-x64': 0.25.2
     dev: false
 
-  /escalade@3.2.0:
-    resolution: {integrity: sha512-WUj2qlxaQtO4g6Pq5c29GTcWGDyd8itL8zTlipgECz3JesAiiOKotd8JU6otB3PACgG6xkJUyVhboMS+bje/jA==, tarball: https://registry.npmmirror.com/escalade/-/escalade-3.2.0.tgz}
-    engines: {node: '>=6'}
-    dev: false
-
   /escape-string-regexp@5.0.0:
     resolution: {integrity: sha512-/veY75JbMK4j1yjvuUxuVsiS/hr/4iHs9FTT6cgTexxdE0Ly/glccBAkloH/DofkjRbZU3bnoj38mOmhkZ0lHw==, tarball: https://registry.npmmirror.com/escape-string-regexp/-/escape-string-regexp-5.0.0.tgz}
     engines: {node: '>=12'}
@@ -2101,6 +2149,15 @@ packages:
 
   /eventemitter3@5.0.1:
     resolution: {integrity: sha512-GWkBvjiSZK87ELrYOSESUYeVIc9mvLLf/nXalMOS5dYrgZq9o5OVkbZAVM06CVxYsCwH9BDZFPlQTlPA1j4ahA==, tarball: https://registry.npmmirror.com/eventemitter3/-/eventemitter3-5.0.1.tgz}
+    dev: false
+
+  /expressive-code@0.41.2:
+    resolution: {integrity: sha512-aLZiZaqorRtNExtGpUjK9zFH9aTpWeoTXMyLo4b4IcuXfPqtLPPxhRm/QlPb8QqIcMMXnSiGRHSFpQfX0m7HJw==, tarball: https://registry.npmmirror.com/expressive-code/-/expressive-code-0.41.2.tgz}
+    dependencies:
+      '@expressive-code/core': 0.41.2
+      '@expressive-code/plugin-frames': 0.41.2
+      '@expressive-code/plugin-shiki': 0.41.2
+      '@expressive-code/plugin-text-markers': 0.41.2
     dev: false
 
   /exsolve@1.0.4:
@@ -2165,10 +2222,6 @@ packages:
       combined-stream: 1.0.8
       es-set-tostringtag: 2.1.0
       mime-types: 2.1.35
-    dev: false
-
-  /fraction.js@4.3.7:
-    resolution: {integrity: sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==, tarball: https://registry.npmmirror.com/fraction.js/-/fraction.js-4.3.7.tgz}
     dev: false
 
   /fs-minipass@2.1.0:
@@ -2302,6 +2355,12 @@ packages:
       web-namespaces: 2.0.1
     dev: false
 
+  /hast-util-has-property@3.0.0:
+    resolution: {integrity: sha512-MNilsvEKLFpV604hwfhVStK0usFY/QmM5zX16bo7EjnAEGofr5YyI37kzopBlZJkHD4t887i+q/C8/tr5Q94cA==, tarball: https://registry.npmmirror.com/hast-util-has-property/-/hast-util-has-property-3.0.0.tgz}
+    dependencies:
+      '@types/hast': 3.0.4
+    dev: false
+
   /hast-util-is-element@3.0.0:
     resolution: {integrity: sha512-Val9mnv2IWpLbNPqc/pUem+a7Ipj2aHacCwgNfTiK0vJKl0LF+4Ba4+v1oPHFpf3bLYmreq0/l3Gud9S5OH42g==, tarball: https://registry.npmmirror.com/hast-util-is-element/-/hast-util-is-element-3.0.0.tgz}
     dependencies:
@@ -2329,6 +2388,26 @@ packages:
       unist-util-visit: 5.0.0
       vfile: 6.0.3
       web-namespaces: 2.0.1
+      zwitch: 2.0.4
+    dev: false
+
+  /hast-util-select@6.0.4:
+    resolution: {integrity: sha512-RqGS1ZgI0MwxLaKLDxjprynNzINEkRHY2i8ln4DDjgv9ZhcYVIHN9rlpiYsqtFwrgpYU361SyWDQcGNIBVu3lw==, tarball: https://registry.npmmirror.com/hast-util-select/-/hast-util-select-6.0.4.tgz}
+    dependencies:
+      '@types/hast': 3.0.4
+      '@types/unist': 3.0.2
+      bcp-47-match: 2.0.3
+      comma-separated-tokens: 2.0.3
+      css-selector-parser: 3.1.2
+      devlop: 1.1.0
+      direction: 2.0.1
+      hast-util-has-property: 3.0.0
+      hast-util-to-string: 3.0.1
+      hast-util-whitespace: 3.0.0
+      nth-check: 2.1.1
+      property-information: 7.0.0
+      space-separated-tokens: 2.0.2
+      unist-util-visit: 5.0.0
       zwitch: 2.0.4
     dev: false
 
@@ -2405,6 +2484,12 @@ packages:
       zwitch: 2.0.4
     dev: false
 
+  /hast-util-to-string@3.0.1:
+    resolution: {integrity: sha512-XelQVTDWvqcl3axRfI0xSeoVKzyIFPwsAGSLIsKdJKQMXDYJS4WYrBNF/8J7RdhIcFI2BOHgAifggsvsxp/3+A==, tarball: https://registry.npmmirror.com/hast-util-to-string/-/hast-util-to-string-3.0.1.tgz}
+    dependencies:
+      '@types/hast': 3.0.4
+    dev: false
+
   /hast-util-to-text@4.0.2:
     resolution: {integrity: sha512-KK6y/BN8lbaq654j7JgBydev7wuNMcID54lkRav1P0CaE1e47P72AWWPiGKXTJU271ooYzcvTAn/Zt0REnvc7A==, tarball: https://registry.npmmirror.com/hast-util-to-text/-/hast-util-to-text-4.0.2.tgz}
     dependencies:
@@ -2427,6 +2512,16 @@ packages:
       comma-separated-tokens: 2.0.3
       hast-util-parse-selector: 4.0.0
       property-information: 6.5.0
+      space-separated-tokens: 2.0.2
+    dev: false
+
+  /hastscript@9.0.1:
+    resolution: {integrity: sha512-g7df9rMFX/SPi34tyGCyUBREQoKkapwdY/T04Qn9TDWfHhAYt4/I0gMVirzK5wEzeUqIjEB+LXC/ypb7Aqno5w==, tarball: https://registry.npmmirror.com/hastscript/-/hastscript-9.0.1.tgz}
+    dependencies:
+      '@types/hast': 3.0.4
+      comma-separated-tokens: 2.0.3
+      hast-util-parse-selector: 4.0.0
+      property-information: 7.0.0
       space-separated-tokens: 2.0.2
     dev: false
 
@@ -2661,11 +2756,6 @@ packages:
       lightningcss-linux-x64-musl: 1.29.1
       lightningcss-win32-arm64-msvc: 1.29.1
       lightningcss-win32-x64-msvc: 1.29.1
-    dev: false
-
-  /lilconfig@3.1.2:
-    resolution: {integrity: sha512-eop+wDAvpItUys0FWkHIKeC9ybYrTGbU41U5K7+bttZZeohvnY7M9dZ5kB21GNWiFT2q1OoPTvncPCgSOVO5ow==, tarball: https://registry.npmmirror.com/lilconfig/-/lilconfig-3.1.2.tgz}
-    engines: {node: '>=14'}
     dev: false
 
   /local-pkg@0.5.1:
@@ -3363,17 +3453,8 @@ packages:
     resolution: {integrity: sha512-0uGYQ1WQL1M5kKvGRXWQ3uZCHtLTO8hln3oBjIusM75WoesZ909uQJs/Hb946i2SS+Gsrhkaa6iAO17jRIv6DQ==, tarball: https://registry.npmmirror.com/node-mock-http/-/node-mock-http-1.0.0.tgz}
     dev: false
 
-  /node-releases@2.0.19:
-    resolution: {integrity: sha512-xxOWJsBKtzAq7DY0J+DTzuz58K8e7sJbdgwkbMWQe8UYB6ekmsQ45q0M/tJDsGaZmbC+l7n57UV8Hl5tHxO9uw==, tarball: https://registry.npmmirror.com/node-releases/-/node-releases-2.0.19.tgz}
-    dev: false
-
   /normalize-path@3.0.0:
     resolution: {integrity: sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==, tarball: https://registry.npmmirror.com/normalize-path/-/normalize-path-3.0.0.tgz}
-    engines: {node: '>=0.10.0'}
-    dev: false
-
-  /normalize-range@0.1.2:
-    resolution: {integrity: sha512-bdok/XvKII3nUpklnV6P2hxtMNrCboOjAcyBuQnWEhO665FwrSNRxU+AqpsyvO6LgGYPspN+lu5CLtw4jPRKNA==, tarball: https://registry.npmmirror.com/normalize-range/-/normalize-range-0.1.2.tgz}
     engines: {node: '>=0.10.0'}
     dev: false
 
@@ -3401,6 +3482,10 @@ packages:
       wrappy: 1.0.2
     dev: false
 
+  /oniguruma-parser@0.12.0:
+    resolution: {integrity: sha512-fD9o5ebCmEAA9dLysajdQvuKzLL7cj+w7DQjuO3Cb6IwafENfx6iL+RGkmyW82pVRsvgzixsWinHvgxTMJvdIA==, tarball: https://registry.npmmirror.com/oniguruma-parser/-/oniguruma-parser-0.12.0.tgz}
+    dev: false
+
   /oniguruma-parser@0.5.4:
     resolution: {integrity: sha512-yNxcQ8sKvURiTwP0mV6bLQCYE7NKfKRRWunhbZnXgxSmB1OXa1lHrN3o4DZd+0Si0kU5blidK7BcROO8qv5TZA==, tarball: https://registry.npmmirror.com/oniguruma-parser/-/oniguruma-parser-0.5.4.tgz}
     dev: false
@@ -3410,6 +3495,14 @@ packages:
     dependencies:
       emoji-regex-xs: 1.0.0
       oniguruma-parser: 0.5.4
+      regex: 6.0.1
+      regex-recursion: 6.0.2
+    dev: false
+
+  /oniguruma-to-es@4.3.1:
+    resolution: {integrity: sha512-VtX1kepWO+7HG7IWV5v72JhiqofK7XsiHmtgnvurnNOTdIvE5mrdWYtsOrQyrXCv1L2Ckm08hywp+MFO7rC4Ug==, tarball: https://registry.npmmirror.com/oniguruma-to-es/-/oniguruma-to-es-4.3.1.tgz}
+    dependencies:
+      oniguruma-parser: 0.12.0
       regex: 6.0.1
       regex-recursion: 6.0.2
     dev: false
@@ -3528,21 +3621,14 @@ packages:
       pathe: 2.0.3
     dev: false
 
-  /postcss-load-config@4.0.2(postcss@8.5.3):
-    resolution: {integrity: sha512-bSVhyJGL00wMVoPUzAVAnbEoWyqRxkjv64tUl427SKnPrENtq6hJwUojroMz2VB+Q1edmi4IfrAPpami5VVgMQ==, tarball: https://registry.npmmirror.com/postcss-load-config/-/postcss-load-config-4.0.2.tgz}
-    engines: {node: '>= 14'}
+  /postcss-nested@6.2.0(postcss@8.5.3):
+    resolution: {integrity: sha512-HQbt28KulC5AJzG+cZtj9kvKB93CFCdLvog1WFLf1D+xmMvPGlBstkpTEZfK5+AN9hfJocyBFCNiqyS48bpgzQ==, tarball: https://registry.npmmirror.com/postcss-nested/-/postcss-nested-6.2.0.tgz}
+    engines: {node: '>=12.0'}
     peerDependencies:
-      postcss: '>=8.0.9'
-      ts-node: '>=9.0.0'
-    peerDependenciesMeta:
-      postcss:
-        optional: true
-      ts-node:
-        optional: true
+      postcss: ^8.2.14
     dependencies:
-      lilconfig: 3.1.2
       postcss: 8.5.3
-      yaml: 2.5.0
+      postcss-selector-parser: 6.1.2
     dev: false
 
   /postcss-selector-parser@6.0.10:
@@ -3553,8 +3639,12 @@ packages:
       util-deprecate: 1.0.2
     dev: true
 
-  /postcss-value-parser@4.2.0:
-    resolution: {integrity: sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==, tarball: https://registry.npmmirror.com/postcss-value-parser/-/postcss-value-parser-4.2.0.tgz}
+  /postcss-selector-parser@6.1.2:
+    resolution: {integrity: sha512-Q8qQfPiZ+THO/3ZrOrO0cJJKfpYCagtMUkXbnEfmgUjwXg6z/WBeOyS9APBBPCTSiDV+s4SwQGu8yFsiMRIudg==, tarball: https://registry.npmmirror.com/postcss-selector-parser/-/postcss-selector-parser-6.1.2.tgz}
+    engines: {node: '>=4'}
+    dependencies:
+      cssesc: 3.0.0
+      util-deprecate: 1.0.2
     dev: false
 
   /postcss@8.5.3:
@@ -3663,6 +3753,12 @@ packages:
     resolution: {integrity: sha512-uorlqlzAKjKQZ5P+kTJr3eeJGSVroLKoHmquUj4zHWuR+hEyNqlXsSKlYYF5F4NI6nl7tWCs0apKJ0lmfsXAPA==, tarball: https://registry.npmmirror.com/regex/-/regex-6.0.1.tgz}
     dependencies:
       regex-utilities: 2.3.0
+    dev: false
+
+  /rehype-expressive-code@0.41.2:
+    resolution: {integrity: sha512-vHYfWO9WxAw6kHHctddOt+P4266BtyT1mrOIuxJD+1ELuvuJAa5uBIhYt0OVMyOhlvf57hzWOXJkHnMhpaHyxw==, tarball: https://registry.npmmirror.com/rehype-expressive-code/-/rehype-expressive-code-0.41.2.tgz}
+    dependencies:
+      expressive-code: 0.41.2
     dev: false
 
   /rehype-parse@9.0.0:
@@ -3912,6 +4008,19 @@ packages:
       '@shikijs/langs': 3.2.1
       '@shikijs/themes': 3.2.1
       '@shikijs/types': 3.2.1
+      '@shikijs/vscode-textmate': 10.0.2
+      '@types/hast': 3.0.4
+    dev: false
+
+  /shiki@3.3.0:
+    resolution: {integrity: sha512-j0Z1tG5vlOFGW8JVj0Cpuatzvshes7VJy5ncDmmMaYcmnGW0Js1N81TOW98ivTFNZfKRn9uwEg/aIm638o368g==, tarball: https://registry.npmmirror.com/shiki/-/shiki-3.3.0.tgz}
+    dependencies:
+      '@shikijs/core': 3.3.0
+      '@shikijs/engine-javascript': 3.3.0
+      '@shikijs/engine-oniguruma': 3.3.0
+      '@shikijs/langs': 3.3.0
+      '@shikijs/themes': 3.3.0
+      '@shikijs/types': 3.3.0
       '@shikijs/vscode-textmate': 10.0.2
       '@types/hast': 3.0.4
     dev: false
@@ -4249,20 +4358,8 @@ packages:
       ufo: 1.5.4
     dev: false
 
-  /update-browserslist-db@1.1.1(browserslist@4.24.4):
-    resolution: {integrity: sha512-R8UzCaa9Az+38REPiJ1tXlImTJXlVfgHZsglwBD/k6nj76ctsH1E3q4doGrukiLQd3sGQYu56r5+lo5r94l29A==, tarball: https://registry.npmmirror.com/update-browserslist-db/-/update-browserslist-db-1.1.1.tgz}
-    hasBin: true
-    peerDependencies:
-      browserslist: '>= 4.21.0'
-    dependencies:
-      browserslist: 4.24.4
-      escalade: 3.2.0
-      picocolors: 1.1.1
-    dev: false
-
   /util-deprecate@1.0.2:
-    resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
-    dev: true
+    resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==, tarball: https://registry.npmmirror.com/util-deprecate/-/util-deprecate-1.0.2.tgz}
 
   /vfile-location@5.0.3:
     resolution: {integrity: sha512-5yXvWDEgqeiYiBe1lbxYF7UMAIm/IcopxMHrMQDq3nvKcjPKIhZklUKL+AE7J7uApI4kwe2snsK+eI6UTj9EHg==, tarball: https://registry.npmmirror.com/vfile-location/-/vfile-location-5.0.3.tgz}
@@ -4390,12 +4487,6 @@ packages:
 
   /yallist@4.0.0:
     resolution: {integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==, tarball: https://registry.npmmirror.com/yallist/-/yallist-4.0.0.tgz}
-    dev: false
-
-  /yaml@2.5.0:
-    resolution: {integrity: sha512-2wWLbGbYDiSqqIKoPjar3MPgB94ErzCtrNE1FdqGuaO0pi2JGjmE8aW8TDZwzU7vuxcGRdL/4gPQwQ7hD5AMSw==, tarball: https://registry.npmmirror.com/yaml/-/yaml-2.5.0.tgz}
-    engines: {node: '>= 14'}
-    hasBin: true
     dev: false
 
   /yargs-parser@21.1.1:
