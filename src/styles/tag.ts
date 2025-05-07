@@ -4,6 +4,7 @@ export const tagColors: Record<string, string> = {
     测试: '#7F94FF',
     经验: '#209BF6',
     设计: '#9E34F0',
+    故事: '#FF6F61',
     // ......
     // Add more tags and their corresponding colors
 };
