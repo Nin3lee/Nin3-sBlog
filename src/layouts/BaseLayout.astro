@@ -9,6 +9,8 @@ const DEFAULT_DESCRIPTION =
     "Nin3 的个人博客，分享 UI 设计、视觉创作、AIGC 工具实践与前端开发中的思考和经验。";
 
 const { pageTitle, description = DEFAULT_DESCRIPTION } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
@@ -26,6 +28,7 @@ const { pageTitle, description = DEFAULT_DESCRIPTION } = Astro.props;
             name="description"
             content={description || DEFAULT_DESCRIPTION}
         />
+        <link rel="canonical" href={canonicalURL} />
         <!-- Google AdSense -->
         <meta
             name="google-adsense-account"
