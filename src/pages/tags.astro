@@ -6,18 +6,21 @@ import { tagColors, defaultTagColor } from "../styles/tag";
 const pageTitle = "Tag";
 const allPosts = await getCollection("posts");
 
-const tagCounts = {};
+const tagCounts: Record<string, number> = {};
 allPosts.forEach((post) => {
     post.data.tags.forEach((tag) => {
         tagCounts[tag] = (tagCounts[tag] || 0) + 1;
     });
 });
 const sortedTags = Object.entries(tagCounts).sort(
-    (a: [string, number], b: [string, number]) => b[1] - a[1],
+    (a, b) => b[1] - a[1],
 );
 ---
 
-<BaseLayout pageTitle=`Nin3's ${pageTitle}`>
+<BaseLayout
+    pageTitle={`Nin3's ${pageTitle}`}
+    description="通过主题标签浏览 Nin3 的博客文章，按设计、实践、经验和故事等分类探索内容。"
+>
     <div class="w-90 md:w-[45rem] mx-auto flex flex-col my-9">
         <p class="text-2xl mb-3">{pageTitle}</p>
         <main class="grid grid-cols-2 md:grid-cols-4 gap-3">

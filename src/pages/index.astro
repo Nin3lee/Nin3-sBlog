@@ -14,7 +14,10 @@ const pageTitle = "Blog";
 import { getTagColor } from "../styles/tag.ts";
 ---
 
-<BaseLayout pageTitle=`Nin3's ${pageTitle}`>
+<BaseLayout
+    pageTitle={`Nin3's ${pageTitle}`}
+    description="Nin3 的个人博客，记录 UI 设计、视觉创作、AIGC 工具实践与前端开发中的思考和经验。"
+>
 	<main class="w-90 md:w-[45rem] mx-auto flex flex-col gap-9 my-9">
 		<!-- Recent Posts -->
 		 <section>
