@@ -1,6 +1,9 @@
-# 禁止GPTBot爬虫抓取
+# 禁止 GPTBot 爬虫抓取
 User-agent: GPTBot
 Disallow: /
 
-# 全部语法：
-https://developers.google.com/search/docs/crawling-indexing/robots/create-robots-txt?hl=zh-cn
+# Sitemap
+Sitemap: https://nin3-lee.netlify.app/sitemap-index.xml
+
+# robots.txt 官方语法说明
+# https://developers.google.com/search/docs/crawling-indexing/robots/create-robots-txt?hl=zh-cn
