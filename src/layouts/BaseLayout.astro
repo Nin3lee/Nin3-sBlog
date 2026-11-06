@@ -8,9 +8,18 @@ import { slide } from "astro:transitions";
 const DEFAULT_DESCRIPTION =
     "Nin3 的个人博客，分享 UI 设计、视觉创作、AIGC 工具实践与前端开发中的思考和经验。";
 
-const { pageTitle, description = DEFAULT_DESCRIPTION } = Astro.props;
+const {
+    pageTitle,
+    description = DEFAULT_DESCRIPTION,
+    ogImage = "/og-default.png",
+    ogImageAlt = "Nin3-sBlog 分享预览图",
+    ogType = "website",
+} = Astro.props;
+
+const resolvedDescription = description || DEFAULT_DESCRIPTION;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const absoluteOgImage = new URL(ogImage, Astro.site);
 ---
 
 <!doctype html>
@@ -24,11 +33,26 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
             content="width=device-width, initial-scale=1, user-scalable=1"
         />
         <meta name="generator" content={Astro.generator} />
-        <meta
-            name="description"
-            content={description || DEFAULT_DESCRIPTION}
-        />
+        <meta name="description" content={resolvedDescription} />
         <link rel="canonical" href={canonicalURL} />
+
+        <!-- Open Graph -->
+        <meta property="og:type" content={ogType} />
+        <meta property="og:site_name" content="Nin3-sBlog" />
+        <meta property="og:locale" content="zh_CN" />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={resolvedDescription} />
+        <meta property="og:url" content={canonicalURL.toString()} />
+        <meta property="og:image" content={absoluteOgImage.toString()} />
+        <meta property="og:image:alt" content={ogImageAlt} />
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={resolvedDescription} />
+        <meta name="twitter:image" content={absoluteOgImage.toString()} />
+        <meta name="twitter:image:alt" content={ogImageAlt} />
+
         <!-- Google AdSense -->
         <meta
             name="google-adsense-account"
