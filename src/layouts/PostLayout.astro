@@ -1,14 +1,25 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
 import { tagColors, defaultTagColor } from "../styles/tag";
-import { Image } from "astro:assets";
+import { getImage } from "astro:assets";
 
 const { frontmatter } = Astro.props;
+
+// 为社交平台生成文章封面图片
+const ogCover = await getImage({
+    src: frontmatter.cover,
+    width: Math.min(frontmatter.cover.width, 1200),
+    format: "jpeg",
+    quality: 85,
+});
 ---
 
 <BaseLayout
     pageTitle={frontmatter.title}
     description={frontmatter.description}
+    ogImage={ogCover.src}
+    ogImageAlt={`${frontmatter.title} - 文章封面`}
+    ogType="article"
 >
     <div class="w-90 md:w-[45rem] mx-auto flex flex-col my-9 gap-3">
         <!-- Header -->
