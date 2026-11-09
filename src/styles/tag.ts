@@ -1,16 +1,14 @@
 import { getCollection } from "astro:content";
+
 export const tagColors: Record<string, string> = {
-    实践: '#66AD5F',
-    测试: '#7F94FF',
-    经验: '#209BF6',
-    设计: '#9E34F0',
-    故事: '#FF6F61',
-    // ......
-    // Add more tags and their corresponding colors
+    实践: 'var(--tag-practice)',
+    测试: 'var(--tag-test)',
+    经验: 'var(--tag-experience)',
+    设计: 'var(--tag-design)',
+    故事: 'var(--tag-story)',
 };
 
-export const defaultTagColor = '#3498db';
-// Default color for tags not in the list
+export const defaultTagColor = 'var(--tag-default)';
 
 export async function getTagsWithCount() {
     const allPosts = await getCollection("posts");

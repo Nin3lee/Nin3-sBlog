@@ -22,7 +22,7 @@ import { getTagColor } from "../styles/tag.ts";
 		<!-- Recent Posts -->
 		 <section>
 			<div class="flex flex-col">
-				<h1 class="text-base md:text-xl font-medium group text-gray-700">
+				<h1 class="text-intro-mobile md:text-intro-desktop font-medium group text-gray-700">
 					<span>Hi, Nin3 there.</span>
 					<br />
 					<br class="md:hidden" />
@@ -67,7 +67,7 @@ import { getTagColor } from "../styles/tag.ts";
 			</div>
 		 </section>
 		<section>
-			<p class="text-2xl mb-3">Recent Posts</p>
+			<p class="text-section-title mb-3">Recent Posts</p>
 			<div class="grid grid-cols-6 gap-6">
 				{
 					PostByTime.slice(0,1).map((post) => (
@@ -82,12 +82,12 @@ import { getTagColor } from "../styles/tag.ts";
 								<div class="flex flex-col">
 										{post.data.tags.map((tag) => (
 											<h2
-												class="font-bold text-sm md:text-base"
+												class="text-post-title font-bold text-metadata md:text-intro-mobile"
 												style={`color: ${getTagColor(tag)}`}
 											>
 												· {tag}
 											</h2>
-											<h1 class="md:text-lg font-bold">{post.data.title}</h1>
+											<h1 class="text-post-title md:text-post-title-featured text-post-title font-bold">{post.data.title}</h1>
 										))}
 								</div>
 								<h3>{post.data.pubDate.toString().slice(4, 15)}</h3>
@@ -108,12 +108,12 @@ import { getTagColor } from "../styles/tag.ts";
 								<div class="flex flex-col">
 										{post.data.tags.map((tag) => (
 											<h2
-												class="font-bold text-sm"
+												class="text-post-title font-bold text-metadata"
 												style={`color: ${getTagColor(tag)}`}
 											>
 												· {tag}
 											</h2>
-											<h1 class="font-bold">{post.data.title}</h1>
+											<h1 class="text-post-title font-bold">{post.data.title}</h1>
 										))}
 								</div>
 								<h3>{post.data.pubDate.toString().slice(4, 15)}</h3>
@@ -125,7 +125,7 @@ import { getTagColor } from "../styles/tag.ts";
 			<!-- History Posts -->
 		</section>
 		<section>
-			<p class="text-2xl mb-3">History Archive</p>
+			<p class="text-section-title mb-3">History Archive</p>
 			<div class="grid grid-cols-6 gap-6">
 				{
 					PostByTime.slice(3,5).map((post) => (
@@ -140,12 +140,12 @@ import { getTagColor } from "../styles/tag.ts";
 								<div class="flex flex-col">
 										{post.data.tags.map((tag) => (
 											<h2
-												class="font-bold text-sm"
+												class="text-post-title font-bold text-metadata"
 												style={`color: ${getTagColor(tag)}`}
 											>
 												· {tag}
 											</h2>
-											<h1 class="font-bold">{post.data.title}</h1>
+											<h1 class="text-post-title font-bold">{post.data.title}</h1>
 										))}
 								</div>
 								<h3>{post.data.pubDate.toString().slice(4, 15)}</h3>
