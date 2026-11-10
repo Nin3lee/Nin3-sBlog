@@ -37,6 +37,9 @@
     --text-metadata: 0.875rem;
     --text-metadata--line-height: 1.25rem;
 
+    --text-tag: 0.875rem;
+    --text-tag--line-height: 1.25rem;
+
     --text-caption: 0.75rem;
     --text-caption--line-height: 1rem;
 }

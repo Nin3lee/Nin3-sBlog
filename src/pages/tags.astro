@@ -22,7 +22,7 @@ const sortedTags = Object.entries(tagCounts).sort(
     description="通过主题标签浏览 Nin3 的博客文章，按设计、实践、经验和故事等分类探索内容。"
 >
     <div class="w-90 md:w-[45rem] mx-auto flex flex-col my-9">
-        <p class="text-2xl mb-3">{pageTitle}</p>
+        <p class="text-section-title mb-3">{pageTitle}</p>
         <main class="grid grid-cols-2 md:grid-cols-4 gap-3">
             {
                 sortedTags.map(([tag, count]) => (
@@ -32,7 +32,7 @@ const sortedTags = Object.entries(tagCounts).sort(
                         style={`background-color: ${tagColors[tag] || defaultTagColor}`}
                     >
                         <div class="my-2 mx-4 flex justify-between items-center">
-                            <p class="text-white text-sm">{tag}</p>
+                            <p class="text-white text-tag">{tag}</p>
                             <div class="rounded-full px-2 bg-white">
                                 <p
                                     class="font-bold"
