@@ -1,15 +1,19 @@
 {
   "name": "Nin3-sBlog",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:5-24-bookworm",
-
   "forwardPorts": [4321],
-
   "portsAttributes": {
     "4321": {
       "label": "Astro Development Server",
       "onAutoForward": "openBrowser"
     }
   },
-
-  "postCreateCommand": "corepack enable pnpm && pnpm install --frozen-lockfile"
+  "postCreateCommand": "corepack pnpm install --frozen-lockfile",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "astro-build.astro-vscode"
+      ]
+    }
+  }
 }
