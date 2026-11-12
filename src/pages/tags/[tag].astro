@@ -2,6 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import { tagColors, defaultTagColor } from "../../styles/tag";
+import { formatDate } from "../../utils/date";
 
 export async function getStaticPaths() {
     let PostByTime = await getCollection("posts");
@@ -33,7 +34,7 @@ const { posts } = Astro.props;
 >
     <div class="w-90 md:w-[45rem] mx-auto flex flex-col my-9">
         <div class="flex justify-between">
-            <p class="text-2xl mb-3 text-gray-700 font-bold">· {tag}</p>
+            <p class="text-page-title mb-3 text-gray-700 font-bold">· {tag}</p>
             {
                 [tag].map((tag) => (
                     <h1
@@ -53,13 +54,11 @@ const { posts } = Astro.props;
                             href={`/posts/${post.id}/`}
                             class="mb-6 hover:scale-95 duration-200"
                         >
-                            <h1 class="text-gray-700 font-bold">
+                            <h1 class="text-gray-700 text-post-title font-bold">
                                 {post.data.title}
                             </h1>
                             <div class="text-gray-400">
-                                {post.data.pubDate.toString().slice(4, 10)},
-                                {post.data.pubDate.toString().slice(10, 15)} ·
-                                {post.data.tags}
+                                {formatDate(post.data.pubDate)} · {post.data.tags}
                             </div>
                         </a>
                     </li>

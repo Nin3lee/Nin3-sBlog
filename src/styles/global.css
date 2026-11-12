@@ -5,7 +5,53 @@
 /* Font */
 /* https://docs.astro.build/zh-cn/guides/fonts/ */
 @theme {
-    --font-sans: 'Georgia', 'sans-serif';
+    --font-sans:
+        'Georgia',
+        'Noto Sans SC',
+        sans-serif;
+        
+    /* Typography */
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+
+    /* Typography: semantic font sizes */
+    --text-page-title: 1.5rem;
+    --text-page-title--line-height: 2rem;
+
+    --text-section-title: 1.5rem;
+    --text-section-title--line-height: 2rem;
+
+    --text-intro-mobile: 1rem;
+    --text-intro-mobile--line-height: 1.5rem;
+
+    --text-intro-desktop: 1.25rem;
+    --text-intro-desktop--line-height: 1.75rem;
+
+    --text-post-title: 1rem;
+    --text-post-title--line-height: 1.5rem;
+
+    --text-post-title-featured: 1.125rem;
+    --text-post-title-featured--line-height: 1.75rem;
+
+    --text-metadata: 0.875rem;
+    --text-metadata--line-height: 1.25rem;
+
+    --text-tag: 0.875rem;
+    --text-tag--line-height: 1.25rem;
+
+    --text-caption: 0.75rem;
+    --text-caption--line-height: 1rem;
+}
+
+/* Tag Colors */
+:root {
+    --tag-practice: #66AD5F;
+    --tag-test: #7F94FF;
+    --tag-experience: #209BF6;
+    --tag-design: #9E34F0;
+    --tag-story: #FF6F61;
+    --tag-default: #3498DB;
 }
 
 ::-webkit-scrollbar {
