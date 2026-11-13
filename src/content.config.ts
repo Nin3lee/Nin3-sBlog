@@ -1,5 +1,6 @@
-import { z, defineCollection } from "astro:content";
-import { glob } from 'astro/loaders';
+import { defineCollection } from "astro:content";
+import { z } from "astro/zod";
+import { glob } from "astro/loaders";
 
 // 为每一个集合定义一个 `loader` 和 `schema`
 const postsCollection = defineCollection({
