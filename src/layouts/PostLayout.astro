@@ -28,7 +28,7 @@ const ogCover = await getImage({
             <!-- <Image src={frontmatter.cover} alt="post's cover" /> -->
             {
                 frontmatter.tags.map((tag: string) => (
-                    <a href={`/tags/${tag}`} class="font-bold">
+                    <a href={`/tags/${tag}/`} class="font-bold">
                         <p
                             style={`color: ${tagColors[tag] || defaultTagColor}`}
                         >
@@ -51,7 +51,7 @@ const ogCover = await getImage({
             {
                 frontmatter.tags.map((tag: string) => (
                     <a
-                        href={`/tags/${tag}`}
+                        href={`/tags/${tag}/`}
                         class="rounded-full hover:scale-95 duration-200 shadow"
                         style={`background-color: ${tagColors[tag] || defaultTagColor}`}
                     >
