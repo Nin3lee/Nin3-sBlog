@@ -1,3 +1,4 @@
+
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import icon from 'astro-icon';
@@ -9,6 +10,9 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   // 网站正式部署地址，用于生成 Sitemap 中的完整 URL
   site: 'https://nin3-lee.netlify.app',
+
+  // 统一使用带结尾斜杠的页面 URL
+  trailingSlash: 'always',
 
   vite: {
     plugins: [tailwindcss()]

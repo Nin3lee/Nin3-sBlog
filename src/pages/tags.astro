@@ -27,7 +27,7 @@ const sortedTags = Object.entries(tagCounts).sort(
             {
                 sortedTags.map(([tag, count]) => (
                     <a
-                        href={`/tags/${tag}`}
+                        href={`/tags/${tag}/`}
                         class="rounded-full hover:scale-95 duration-200 shadow"
                         style={`background-color: ${tagColors[tag] || defaultTagColor}`}
                     >
