@@ -58,18 +58,73 @@ const absoluteOgImage = new URL(ogImage, Astro.site);
             name="google-adsense-account"
             content="ca-pub-1026637122289333"
         />
+
+        <!-- Umami Analytics -->
         <script
             defer
             src="https://cloud.umami.is/script.js"
-            data-website-id="13315dc1-aabc-4a42-b7d1-1f4e3d2cd7bc"></script>
+            data-website-id="13315dc1-aabc-4a42-b7d1-1f4e3d2cd7bc"
+        ></script>
+
         <ClientRouter />
         <title>{pageTitle}</title>
     </head>
+
     <body class="min-h-screen flex flex-col">
         <Nav />
+
         <div transition:animate={slide({ duration: "0.4s" })}>
             <slot />
         </div>
+
         <Footer />
     </body>
 </html>
+
+
+<script>
+    const COUNTER_API =
+        "https://nin3-blog-counter.nin3mx.workers.dev";
+
+    document.addEventListener("astro:page-load", async () => {
+        const path = window.location.pathname;
+
+        try {
+            const response = await fetch(`${COUNTER_API}/count`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ path }),
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}`);
+            }
+
+            const data = await response.json();
+
+            if (!data.success) {
+                throw new Error("Invalid counter response");
+            }
+
+            const siteElement =
+                document.querySelector("[data-site-views]");
+
+            const pageElement =
+                document.querySelector("[data-page-views]");
+
+            if (siteElement) {
+                siteElement.textContent =
+                    Number(data.site_views).toLocaleString("zh-CN");
+            }
+
+            if (pageElement) {
+                pageElement.textContent =
+                    Number(data.page_views).toLocaleString("zh-CN");
+            }
+        } catch (error) {
+            console.error("[Nin3 Views]", error);
+        }
+    });
+</script>
