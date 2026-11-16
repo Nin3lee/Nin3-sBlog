@@ -83,6 +83,68 @@ const absoluteOgImage = new URL(ogImage, Astro.site);
 
 
 <script>
+    import type {
+        TransitionBeforePreparationEvent,
+    } from "astro:transitions/client";
+
+    type PagePosition = {
+        column: number;
+        depth: number;
+    };
+
+    function getPagePosition(
+        pathname: string,
+    ): PagePosition | null {
+        const path = pathname.replace(/\/+$/, "") || "/";
+
+        if (path === "/") {
+            return { column: 0, depth: 0 };
+        }
+
+        if (path === "/posts") {
+            return { column: 1, depth: 0 };
+        }
+
+        if (path.startsWith("/posts/")) {
+            return { column: 1, depth: 1 };
+        }
+
+        if (path === "/tags") {
+            return { column: 2, depth: 0 };
+        }
+
+        if (path.startsWith("/tags/")) {
+            return { column: 2, depth: 1 };
+        }
+
+        return null;
+    }
+
+    function handlePageDirection(
+        event: TransitionBeforePreparationEvent,
+    ) {
+        const from = getPagePosition(event.from.pathname);
+        const to = getPagePosition(event.to.pathname);
+
+        if (!from || !to) return;
+
+        if (from.column !== to.column) {
+            event.direction =
+                to.column > from.column ? "forward" : "back";
+            return;
+        }
+
+        if (from.depth !== to.depth) {
+            event.direction =
+                to.depth > from.depth ? "forward" : "back";
+        }
+    }
+
+    document.addEventListener(
+        "astro:before-preparation",
+        handlePageDirection,
+    );
+
     const COUNTER_API =
         "https://nin3-blog-counter.nin3mx.workers.dev";
 
